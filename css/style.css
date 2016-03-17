@@ -19,6 +19,7 @@ content {
   width: 550px;
   margin: 0 auto;
   opacity: 0;
+  border: 1px solid black;
 }
 
 h1, h3 {
@@ -33,6 +34,6 @@ h3 {
   font-size: 2em;
 }
 
-p {
-
+#text-section p {
+  line-height: 125%;
 }
