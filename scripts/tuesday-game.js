@@ -1,19 +1,24 @@
 
-function startGame() {
-  // TweenLite.to("#start-button", 2, {opacity:0});
+function addTitle(title, headingSize, attributes) {
+  var headingSizeStr = "H" + headingSize.toString();
+  console.log(headingSizeStr);
+  var titleElement = document.createElement(headingSizeStr);
+  titleElement.innerHTML = title;
+  attributes = attributes || {};
+  for (var key in attributes) {
+    if (attributes.hasOwnProperty(key)) {
+      titleElement.setAttribute(key, attributes[key]);
+    }
+  }
 
-  // Remove start button
-  var image_section = document.getElementById("image-section").innerHTML;
-  start_btn.parentNode.removeChild(start_btn);
+  var titleContainer = document.createElement("DIV");
+  titleContainer.setAttribute("id", "title-container");
+  titleContainer.appendChild(titleElement);
 
-  // Set title (TUESDAY) as main element
-  var TUESDAY = document.createElement("H1");
-  var t = document.createTextNode("TUESDAY");
-  // TUESDAY.setAttribute() id, opacity
-  TUESDAY.appendChild(t);
-  document.body.appendChild(t);
+  var titleSection = document.getElementById("title-section");
+  titleSection.appendChild(titleContainer);
 
-  // TweenLite.to("#tuesday-title", 2, {opacity:1});
+  return titleContainer;
 }
 
 function addImage(attributes) {
@@ -53,6 +58,11 @@ function addText(text, attributes) {
   textSection.appendChild(textContainer);
 
   return textSection;
+}
+
+function removeTitle() {
+  var titleContainer = document.getElementById("title-section");
+  titleContainer.innerHTML = "";
 }
 
 function removeImage() {

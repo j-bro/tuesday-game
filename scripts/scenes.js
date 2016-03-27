@@ -2,20 +2,19 @@
 function tuesdayTitleScene() {
   var t = new TimelineLite();
   t.call(function() {
-    addText("TUESDAY");
+    addTitle("TUESDAY", 1);
   });
   t.delay(1);
-  t.to("#text-section", 2, {opacity:1})
-  t.to("#text-section", 2, {opacity:0}, "+=2");
-
+  t.to("#title-section", 3, {opacity:1});
+  t.to("#title-section", 3, {opacity:0}, "+=2");
   t.call(function() {
-    removeText();
-    addText("by Julie Brown");
+    removeTitle();
+    addTitle("by Julie Brown", 3);
   });
-  t.to("#text-section", 2, {opacity:1});
-  t.to("#text-section", 2, {opacity:0}, "+=2");
+    t.to("#title-section", 3, {opacity:1});
+    t.to("#title-section", 3, {opacity:0}, "+=2");
   t.call(function() {
-    removeText();
+    removeTitle();
     r1WindowScene();
   });
 }
