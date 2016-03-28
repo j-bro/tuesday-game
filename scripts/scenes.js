@@ -185,6 +185,7 @@ function r1BoxGuessCloseScene() {
     r1AfterBox();
   });
 }
+//something isn't bringing the game to r1AfterBox?? pls help
 
 function r1AfterBox() {
   t.to("#text-section", 2, {opacity:0});
@@ -203,6 +204,9 @@ function r1AfterBoxLookScene() {
     addText("You don’t need what’s inside. You never do.");
   t.to("text-section", 2, {opacity: 1});
   });
+  t.call(function() {
+    r2WindowScene();
+  });
 }
 
 function r2WindowScene() {
@@ -215,5 +219,5 @@ function r2WindowScene() {
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
-  })
+  });
 }
