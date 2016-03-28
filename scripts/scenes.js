@@ -185,3 +185,35 @@ function r1BoxGuessCloseScene() {
     r1AfterBox();
   });
 }
+
+function r1AfterBox() {
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("> Leave.", {"onclick": "r2WindowScene()"});
+    addText("> Look inside.", {"onclick": "r1AfterBoxLookScene()"});
+  });
+  t.to("#text-section", 2, {opcaity:1}, "+=2");
+}
+
+function r1AfterBoxLookScene() {
+  t.to("text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You don’t need what’s inside. You never do.");
+  t.to("text-section", 2, {opacity: 1});
+  });
+}
+
+function r2WindowScene() {
+  t.to("text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("It is Tuesday. It is raining.");
+    addText("// There is nothing new under the sun.");
+    addImage({"alt": "",
+              "src": "img/gifs/window_large.gif",
+              "id": "r1-window-image",
+              "width": "400"});
+  })
+}
