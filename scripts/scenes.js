@@ -70,12 +70,11 @@ function r1DoorScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/door_opens.gif",
-              "id": "r1-door-open",
-              "width": "200"});
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still.",
+              "width": "400"});
   });
   t.to("#image-section", 2, {opacity:1});
-  // TODO show door
   t.call(function() {
     removeText();
     addText("It is Tuesday.");
@@ -93,6 +92,10 @@ function r1AfterDoorYesScene() {
     removeText();
     addText("So you say.");
   });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    r1DoorSceneOpen();
+  });
 }
 
 function r1AfterDoorNoScene() {
@@ -101,5 +104,84 @@ function r1AfterDoorNoScene() {
   t.call(function() {
     removeText();
     addText("Watch closely.");
+  });
+  t.to("#text-section", 2, {opacity:1})
+  t.call(function() {
+    r1DoorSceneOpen();
+  });
+}
+
+function r1DoorSceneOpen() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+//add delay before gif starts
+    addImage({"alt": "",
+              "src": "img/gifs/door_opens.gif",
+              "id": "r1-door-opens.",
+              "width": "400"});
+    addText("As expected.");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:0}, "+=2");
+  t.to("#image-section", 2, {opacity:0}, "+=2");
+  t.to("#text-section", 2, {opacity:0}, "+=2");
+  t.call(function() {
+    removeText();
+    removeImage();
+    r1BoxScene();
+  });
+}
+
+function r1BoxScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/frames/box_large1.png",
+              "id": "r1-box",
+              "width": "400"});
+    addText("Ah yes. How quaint. ")
+  });
+  t.to("#image-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0}, "+=2");
+  t.call(function() {
+    removeText();
+    addText("// It is Tuesday. What happens now?");
+    addText("> The box will open.", {"onclick": "r1BoxGuessOpenScene()"});
+    addText("> The box will stay closed.", {"onclick": "r1BoxGuessCloseScene()"});
+  });
+  t.to("#text-section", 2, {opacity:1});
+}
+
+function r1BoxGuessOpenScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    removeText();
+    addText("Correct. This always happens.");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.call(function() {
+    r1AfterBox();
+  });
+}
+
+function r1BoxGuessCloseScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    removeText();
+    addText("This always happens. Did you not remember?");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.call(function() {
+    r1AfterBox();
   });
 }
