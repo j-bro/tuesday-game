@@ -165,7 +165,7 @@ function r1BoxGuessOpenScene() {
     removeText();
     addText("Correct. This always happens.");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1}, "+=3");
   t.call(function() {
     r1AfterBoxScene();
   });
@@ -180,31 +180,30 @@ function r1BoxGuessCloseScene() {
     removeText();
     addText("This always happens. Did you not remember?");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1}, "+=3");
   t.call(function() {
     r1AfterBoxScene();
   });
 }
-//something isn't bringing the game to r1AfterBox?? pls help
 
 function r1AfterBoxScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0}, "+=2");
   t.call(function() {
     removeText();
+    addText("> Look Inside.", {"onclick": "r1AfterBoxLookScene()"});
     addText("> Leave.", {"onclick": "r2WindowScene()"});
-    addText("> Look inside.", {"onclick": "r1AfterBoxLookScene()"});
   });
-  t.to("#text-section", 2, {opcaity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1});
 }
 
 function r1AfterBoxLookScene() {
   var t = new TimelineLite();
-  t.to("text-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("You don’t need what’s inside. You never do.");
-  t.to("text-section", 2, {opacity: 1});
+  t.to("#text-section", 2, {opacity: 1}, "+=2");
   });
   t.call(function() {
     r2WindowScene();
@@ -213,8 +212,10 @@ function r1AfterBoxLookScene() {
 
 function r2WindowScene() {
   var t = new TimelineLite();
-  t.to("text-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
+    removeImage();
     removeText();
     addText("It is Tuesday. It is raining.");
     addText("// There is nothing new under the sun.");
@@ -223,4 +224,18 @@ function r2WindowScene() {
               "id": "r1-window-image",
               "width": "400"});
   });
+  t.to("#image-section", 2, {opacity:1})
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:0}, "+=2");
+  t.call(function() {
+    removeText();
+    addText("Now, what will you do?");
+    addText("> Wait.", {"onclick": "r1AfterBoxLookScene()"});
+    addText("> Watch.", {"onclick": "r1AfterBoxLookScene()"});
+  });
+  t.to("#text-section", 2, {opacity:1});
+}
+
+function r2DoorScene() {
+  
 }
