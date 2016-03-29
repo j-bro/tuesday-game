@@ -167,7 +167,7 @@ function r1BoxGuessOpenScene() {
   });
   t.to("#text-section", 2, {opacity:1}, "+=2");
   t.call(function() {
-    r1AfterBox();
+    r1AfterBoxScene();
   });
 }
 
@@ -182,12 +182,13 @@ function r1BoxGuessCloseScene() {
   });
   t.to("#text-section", 2, {opacity:1}, "+=2");
   t.call(function() {
-    r1AfterBox();
+    r1AfterBoxScene();
   });
 }
 //something isn't bringing the game to r1AfterBox?? pls help
 
-function r1AfterBox() {
+function r1AfterBoxScene() {
+  var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -198,6 +199,7 @@ function r1AfterBox() {
 }
 
 function r1AfterBoxLookScene() {
+  var t = new TimelineLite();
   t.to("text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -210,6 +212,7 @@ function r1AfterBoxLookScene() {
 }
 
 function r2WindowScene() {
+  var t = new TimelineLite();
   t.to("text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
