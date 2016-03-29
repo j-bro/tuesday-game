@@ -54,11 +54,8 @@ function r1StopRainScene() {
   t.to("#text-section", 2, {opacity:0}, "+=3");
   t.to("#image-section", 2, {opacity:1}, "+=2");
   t.call(function(){
-    removeImage();
-    addImage({"alt":"",
-              "src": "img/gifs/window_largeslow.gif",
-              "id": "r1-window-image-slow",
-              "width": "400"});
+    var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/gifs/window_largeslow.gif");
     });
     t.to("#image-section", 3, {opacity:0}, "+=3");
     t.call(function(){
@@ -110,18 +107,14 @@ function r1AfterDoorNoScene() {
     r1DoorSceneOpen();
   });
 }
-
+//line 117 not working, not switching to open gif
 function r1DoorSceneOpen() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    removeImage();
-//add delay before gif starts
-    addImage({"alt": "",
-              "src": "img/gifs/door_opens.gif",
-              "id": "r1-door-opens.",
-              "width": "400"});
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_opens.gif");
     addText("As expected.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=2");
@@ -202,14 +195,14 @@ function r1AfterBoxLookScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("You don’t need what’s inside. You never do.");
+    addText("You don't need what's inside. You never do.");
   t.to("#text-section", 2, {opacity: 1}, "+=2");
   });
   t.call(function() {
     r2WindowScene();
   });
 }
-
+//too fast transtition
 function r2WindowScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
@@ -230,12 +223,75 @@ function r2WindowScene() {
   t.call(function() {
     removeText();
     addText("Now, what will you do?");
-    addText("> Wait.", {"onclick": "r1AfterBoxLookScene()"});
-    addText("> Watch.", {"onclick": "r1AfterBoxLookScene()"});
+    addText("> Wait.", {"onclick": "r2WindowPt2Scene()"});
+    addText("> Watch.", {"onclick": "r2WindowPt2Scene()"});
   });
-  t.to("#text-section", 2, {opacity:1});
+    t.to("#text-section", 2, {opacity:1});
+}
+
+function r2WindowPt2Scene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Time heals all wounds, does it not?");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=3");
+  t.to("#text-section", 2, {opacity:0}, "+=3");
+  t.to("#image-section", 2, {opacity:0}, "+=2");
+  t.call(function() {
+    removeText();
+    removeImage();
+    r2DoorScene();
+  });
 }
 
 function r2DoorScene() {
-  
+  var t = new TimelineLite();
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still.",
+              "width": "400"});
+    addText("It is Tuesday. // What will happen?");
+    addText("> The door opens.", {"onclick": "r2DoorGuessOpenScene()"});
+    addText("> The door stays closed.", {"onclick": "r2DoorGuessCloseScene()"});
+  });
+  t.to("#image-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1});
 }
+
+function r2DoorGuessOpenScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    addText("Of course.");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.call(function() {
+    r2DoorChoiceScene();
+  });
+}
+
+function r2DoorGuessCloseScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    addText("Haven't you been paying attention?.");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.call(function() {
+    r2DoorChoiceScene();
+  });
+}
+
+function r2DoorChoiceScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_opens.gif");
+  });
+}
+//something is wrong with 294
