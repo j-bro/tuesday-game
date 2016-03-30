@@ -68,7 +68,7 @@ function r1DoorScene() {
   t.call(function() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
-              "id": "r1-door-still.",
+              "id": "r1-door-still",
               "width": "400"});
   });
   t.to("#image-section", 2, {opacity:1});
@@ -102,12 +102,12 @@ function r1AfterDoorNoScene() {
     removeText();
     addText("Watch closely.");
   });
-  t.to("#text-section", 2, {opacity:1})
+  t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     r1DoorSceneOpen();
   });
 }
-//line 117 not working, not switching to open gif
+
 function r1DoorSceneOpen() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
@@ -135,7 +135,7 @@ function r1BoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
-    addText("Ah yes. How quaint. ")
+    addText("Ah yes. How quaint. ");
   });
   t.to("#image-section", 2, {opacity:1}, "+=2");
   t.to("#text-section", 2, {opacity:1});
@@ -217,7 +217,7 @@ function r2WindowScene() {
               "id": "r1-window-image",
               "width": "400"});
   });
-  t.to("#image-section", 2, {opacity:1})
+  t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1}, "+=2");
   t.to("#text-section", 2, {opacity:0}, "+=2");
   t.call(function() {
@@ -251,7 +251,7 @@ function r2DoorScene() {
   t.call(function() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
-              "id": "r1-door-still.",
+              "id": "r1-door-still",
               "width": "400"});
     addText("It is Tuesday. // What will happen?");
     addText("> The door opens.", {"onclick": "r2DoorGuessOpenScene()"});
@@ -263,7 +263,7 @@ function r2DoorScene() {
 
 function r2DoorGuessOpenScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0})
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("Of course.");
@@ -276,10 +276,10 @@ function r2DoorGuessOpenScene() {
 
 function r2DoorGuessCloseScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0})
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("Haven't you been paying attention?.");
+    addText("Haven't you been paying attention?");
   });
   t.to("#text-section", 2, {opacity:1}, "+=2");
   t.call(function() {
