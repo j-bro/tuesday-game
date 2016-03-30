@@ -69,7 +69,7 @@ function r1DoorScene() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
-              "width": "400"});
+              "height": "400"});
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
@@ -114,7 +114,7 @@ function r1DoorSceneOpen() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_opens.gif");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
     addText("As expected.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=2");
@@ -252,7 +252,7 @@ function r2DoorScene() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
-              "width": "400"});
+              "height": "400"});
     addText("It is Tuesday. // What will happen?");
     addText("> The door opens.", {"onclick": "r2DoorGuessOpenScene()"});
     addText("> The door stays closed.", {"onclick": "r2DoorGuessCloseScene()"});
@@ -291,7 +291,7 @@ function r2DoorChoiceScene() {
   var t = new TimelineLite();
   t.call(function() {
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_opens.gif");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
   });
   t.to("#text-section", 2, {opacity:0}, "+=2");
   t.call(function() {
@@ -305,6 +305,7 @@ function r2DoorChoiceScene() {
     addText("> Go through door.", {"onclick": "r2DoorThroughScene()"});
     addText("> Move on.", {"onclick": "r2BoxScene()"});
   });
+  t.to("#text-section", 2, {opacity:1}, "+=2");
 }
 
 function r2DoorThroughScene() {
@@ -331,7 +332,7 @@ function r2BoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
-    addText("See? Nothing changes on Tuesdays. // You know what happens next, don’t you?");
+    addText("See? Nothing changes on Tuesdays. // You know what happens next, don't you?");
   });
   t.to("#image-section", 2, {opacity:1}, "+=2");
   t.to("#text-section", 2, {opacity:1}, "+=2");
