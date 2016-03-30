@@ -268,7 +268,7 @@ function r2DoorGuessOpenScene() {
     removeText();
     addText("Of course.");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1}, "+=1");
   t.call(function() {
     r2DoorChoiceScene();
   });
@@ -281,7 +281,7 @@ function r2DoorGuessCloseScene() {
     removeText();
     addText("Haven't you been paying attention?");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1}, "+=1");
   t.call(function() {
     r2DoorChoiceScene();
   });
@@ -293,5 +293,46 @@ function r2DoorChoiceScene() {
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_opens.gif");
   });
+  t.to("#text-section", 2, {opacity:0}, "+=2");
+  t.call(function() {
+    removeText();
+    addText("You see now, this always happens.");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0}, "+=2");
+  });
+  t.call(function() {
+    removeText();
+    addText("> Go through door.", {"onclick": "r2DoorThroughScene()"});
+    addText("> Move on.", {"onclick": "r2BoxScene()"});
+  });
 }
-//something is wrong with 294
+
+function r2DoorThroughScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    addText("... Let us move on.");
+  t.to("#text-section", 2, {opacity:1}, "+=1");
+  t.to("#text-section", 2, {opacity:0}, "+=2");
+  });
+  t.call(function() {
+    r2BoxScene();
+  });
+}
+
+function r2BoxScene() {
+  var t = new TimelineLite();
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/frames/box_large1.png",
+              "id": "r1-box",
+              "width": "400"});
+    addText("See? Nothing changes on Tuesdays. // You know what happens next, don’t you?");
+  });
+  t.to("#image-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+}
