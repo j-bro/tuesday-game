@@ -1,9 +1,11 @@
-body {
-  font-family: 'Special Elite', cursive;
+
+@font-face {
+    font-family: "Disposable Droid BB";
+    src: url('../fonts/disposabledroid-bb/DisposableDroidBB.ttf') format("truetype");
 }
 
-content {
-  border: 1px solid red;
+body {
+  font-family: 'Special Elite', cursive;
 }
 
 #title-section {
@@ -12,6 +14,7 @@ content {
   margin: 0 auto;
   text-align: center;
   opacity: 0;
+  font-family: "Disposable Droid BB";
 }
 
 #image-section {
@@ -27,7 +30,8 @@ content {
   width: 550px;
   margin: 0 auto;
   opacity: 0;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+  font-family: "Disposable Droid BB";
 }
 
 #text-section p {
@@ -39,9 +43,13 @@ h1, h3 {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 6em;
 }
 
 h3 {
+  font-size: 3em;
+}
+
+p {
   font-size: 2em;
 }
