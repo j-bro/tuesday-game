@@ -9,7 +9,7 @@ body {
 }
 
 #title-section {
-  height: 180px;
+  height: 0px;
   width: 550px;
   margin: 0 auto;
   text-align: center;
@@ -18,7 +18,6 @@ body {
 }
 
 #image-section {
-  height: 400px;
   width: 550px;
   margin: 0 auto;
   text-align: center;
@@ -26,16 +25,14 @@ body {
 }
 
 #text-section {
-  height: 100px;
   width: 550px;
   margin: 0 auto;
   opacity: 0;
-  /*border: 1px solid black;*/
   font-family: "Disposable Droid BB";
 }
 
 #text-section p {
-  line-height: 125%;
+  /*line-height: 125%;*/
 }
 
 h1, h3 {
@@ -51,5 +48,5 @@ h3 {
 }
 
 p {
-  font-size: 2em;
+  font-size: 1.4em;
 }

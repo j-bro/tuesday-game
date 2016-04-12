@@ -1,5 +1,6 @@
 
 function tuesdayTitleScene() {
+  expandTitleSection();
   var t = new TimelineLite();
   t.call(function() {
     addTitle("TUESDAY", 1);
@@ -15,6 +16,7 @@ function tuesdayTitleScene() {
     t.to("#title-section", 3, {opacity:0}, "+=2");
   t.call(function() {
     removeTitle();
+    collapseTitleSection();
     r1WindowScene();
   });
 }
@@ -74,8 +76,7 @@ function r1DoorScene() {
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
     removeText();
-    addText("It is Tuesday.");
-    addText("// Do you know what will happen?");
+    addText("It is Tuesday. // Do you know what will happen?");
     addTextPointerHover("> Yes", {"onclick": "r1AfterDoorYesScene()"});
     addTextPointerHover("> No", {"onclick": "r1AfterDoorNoScene()"});
   });
@@ -142,7 +143,7 @@ function r1BoxScene() {
   t.to("#text-section", 2, {opacity:0}, "+=2");
   t.call(function() {
     removeText();
-    addText("// It is Tuesday. What happens now?");
+    addText("It is Tuesday. // What happens now?");
     addTextPointerHover("> The box will open.", {"onclick": "r1BoxGuessOpenScene()"});
     addTextPointerHover("> The box will stay closed.", {"onclick": "r1BoxGuessCloseScene()"});
   });
@@ -202,10 +203,10 @@ function r1AfterBoxLookScene() {
     r2WindowScene();
   });
 }
-//too fast transtition
+
 function r2WindowScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0}, "+=2");
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeImage();
@@ -226,7 +227,7 @@ function r2WindowScene() {
     addTextPointerHover("> Wait.", {"onclick": "r2WindowPt2Scene()"});
     addTextPointerHover("> Watch.", {"onclick": "r2WindowPt2Scene()"});
   });
-    t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
 }
 
 function r2WindowPt2Scene() {
@@ -302,8 +303,8 @@ function r2DoorChoiceScene() {
   });
   t.call(function() {
     removeText();
-    addText("> Go through door.", {"onclick": "r2DoorThroughScene()"});
-    addText("> Move on.", {"onclick": "r2BoxScene()"});
+    addTextPointerHover("> Go through door.", {"onclick": "r2DoorThroughScene()"});
+    addTextPointerHover("> Move on.", {"onclick": "r2BoxScene()"});
   });
   t.to("#text-section", 2, {opacity:1}, "+=2");
 }
@@ -313,10 +314,10 @@ function r2DoorThroughScene() {
   t.to("#text-section", 2, {opacity:0})
   t.call(function() {
     removeText();
-    addText("... Let us move on.");
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#text-section", 2, {opacity:0}, "+=2");
+    addText("... Let us move on.")
   });
+  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#text-section", 2, {opacity:0}, "+=2");
   t.call(function() {
     r2BoxScene();
   });
@@ -332,7 +333,8 @@ function r2BoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
-    addText("See? Nothing changes on Tuesdays. // You know what happens next, don't you?");
+    addText("See? Nothing changes on Tuesdays.");
+    addText("// You know what happens next, don't you?");
   });
   t.to("#image-section", 2, {opacity:1}, "+=2");
   t.to("#text-section", 2, {opacity:1}, "+=2");
