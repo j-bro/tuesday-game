@@ -37,8 +37,8 @@ function r1WindowScene() {
   t.call(function() {
     removeText();
     addText("What will you do?");
-    addText("> Wait.", {'onclick': 'r1StopRainScene()'});
-    addText("> Watch.", {'onclick': 'r1StopRainScene()'});
+    addTextPointerHover("> Wait.", {'onclick': 'r1StopRainScene()'});
+    addTextPointerHover("> Watch.", {'onclick': 'r1StopRainScene()'});
   });
   t.to("#text-section", 2, {opacity:1}, "+=3");
 }
@@ -76,8 +76,8 @@ function r1DoorScene() {
     removeText();
     addText("It is Tuesday.");
     addText("// Do you know what will happen?");
-    addText("> Yes", {"onclick": "r1AfterDoorYesScene()"});
-    addText("> No", {"onclick": "r1AfterDoorNoScene()"});
+    addTextPointerHover("> Yes", {"onclick": "r1AfterDoorYesScene()"});
+    addTextPointerHover("> No", {"onclick": "r1AfterDoorNoScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
 }
@@ -143,8 +143,8 @@ function r1BoxScene() {
   t.call(function() {
     removeText();
     addText("// It is Tuesday. What happens now?");
-    addText("> The box will open.", {"onclick": "r1BoxGuessOpenScene()"});
-    addText("> The box will stay closed.", {"onclick": "r1BoxGuessCloseScene()"});
+    addTextPointerHover("> The box will open.", {"onclick": "r1BoxGuessOpenScene()"});
+    addTextPointerHover("> The box will stay closed.", {"onclick": "r1BoxGuessCloseScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
 }
@@ -184,8 +184,8 @@ function r1AfterBoxScene() {
   t.to("#text-section", 2, {opacity:0}, "+=2");
   t.call(function() {
     removeText();
-    addText("> Look Inside.", {"onclick": "r1AfterBoxLookScene()"});
-    addText("> Leave.", {"onclick": "r2WindowScene()"});
+    addTextPointerHover("> Look Inside.", {"onclick": "r1AfterBoxLookScene()"});
+    addTextPointerHover("> Leave.", {"onclick": "r2WindowScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
 }
@@ -223,8 +223,8 @@ function r2WindowScene() {
   t.call(function() {
     removeText();
     addText("Now, what will you do?");
-    addText("> Wait.", {"onclick": "r2WindowPt2Scene()"});
-    addText("> Watch.", {"onclick": "r2WindowPt2Scene()"});
+    addTextPointerHover("> Wait.", {"onclick": "r2WindowPt2Scene()"});
+    addTextPointerHover("> Watch.", {"onclick": "r2WindowPt2Scene()"});
   });
     t.to("#text-section", 2, {opacity:1});
 }
@@ -254,8 +254,8 @@ function r2DoorScene() {
               "id": "r1-door-still",
               "width": "400"});
     addText("It is Tuesday. // What will happen?");
-    addText("> The door opens.", {"onclick": "r2DoorGuessOpenScene()"});
-    addText("> The door stays closed.", {"onclick": "r2DoorGuessCloseScene()"});
+    addTextPointerHover("> The door opens.", {"onclick": "r2DoorGuessOpenScene()"});
+    addTextPointerHover("> The door stays closed.", {"onclick": "r2DoorGuessCloseScene()"});
   });
   t.to("#image-section", 2, {opacity:1}, "+=2");
   t.to("#text-section", 2, {opacity:1});

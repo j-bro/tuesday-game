@@ -60,6 +60,27 @@ function addText(text, attributes) {
   return textSection;
 }
 
+function addTextPointerHover(text, attributes) {
+    var textElement = document.createElement("P");
+    textElement.innerHTML = text;
+    attributes = attributes || {};
+    for (var key in attributes) {
+      if (attributes.hasOwnProperty(key)) {
+        textElement.setAttribute(key, attributes[key]);
+      }
+    }
+
+    var textContainer = document.createElement("DIV");
+    textContainer.setAttribute("id", "text-container");
+    textContainer.style.cursor = 'pointer';
+    textContainer.appendChild(textElement);
+
+    var textSection = document.getElementById("text-section");
+    textSection.appendChild(textContainer);
+
+    return textSection;
+}
+
 function removeTitle() {
   var titleContainer = document.getElementById("title-section");
   titleContainer.innerHTML = "";
