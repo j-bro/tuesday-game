@@ -53,15 +53,11 @@ function r1StopRainScene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0}, "+=3");
   t.to("#image-section", 2, {opacity:1}, "+=2");
+  t.to("#image-section", 3, {opacity:0}, "+=3");
   t.call(function(){
-    var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/gifs/window_largeslow.gif");
-    });
-    t.to("#image-section", 3, {opacity:0}, "+=3");
-    t.call(function(){
-      removeImage();
-      r1DoorScene();
-    });
+    removeImage();
+    r1DoorScene();
+  });
 }
 function r1DoorScene() {
   var t = new TimelineLite();
@@ -332,8 +328,115 @@ function r2BoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
+<<<<<<< Updated upstream
     addText("See? Nothing changes on Tuesdays. // You know what happens next, don't you?");
+=======
+    addText("See? Nothing changes on Tuesdays.");
+    addText("// You know what happens next, don't you?");
+    addTextPointerHover(">The box will open.", {"onclick": "r2BoxOpenScene()"});
+    addTextPointerHover(">The box will stay closed.", {"onclick": "r2BoxCloseScene()"});
+>>>>>>> Stashed changes
   });
-  t.to("#image-section", 2, {opacity:1}, "+=2");
-  t.to("#text-section", 2, {opacity:1}, "+=2");
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+  var box = document.getElementById("r1-box");
+  box.setAttribute("src", "img/gifs/box_large.gif");
+  });
+}
+
+function r2BoxOpenScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("This always happens.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    r2BoxGuessScene();
+  });
+}
+
+function r2BoxCloseScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...This always happens.");
+  });
+  t.to("#text-section", 1, {opacity:1});
+  t.call(function() {
+    r2BoxGuessScene();
+  });
+}
+
+function r2BoxGuessScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addTextPointerHover(">Leave.", {"onclick": "r3WindowScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "r2BoxGuessAfterScene()"});
+  });
+  t.to("#text-section", 2, {opacity:1});
+}
+
+function r2BoxGuessAfterScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("No. That never happens.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function(){
+    r3WindowScene();
+  });
+}
+
+function r3WindowScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addText("It it raining.");
+    addText("//Always. // Always.");
+    addImage({"alt": "",
+              "src": "img/gifs/window_large.gif",
+              "id": "r1-window-image",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Always.", {"onclick": "r3WindowAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "r3WindowBScene()"});
+  });
+}
+
+function r3WindowAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addText("Always.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+}
+
+function r3WindowBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addText("It is Tuesday. Things never change.")
+  });
+  t.to("#text-section", 2, {opacity:1});
 }
