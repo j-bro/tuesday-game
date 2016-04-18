@@ -21,6 +21,28 @@ function addTitle(title, headingSize, attributes) {
   return titleContainer;
 }
 
+function expandTitleSection() {
+    var titleSection = document.getElementById("title-section");
+
+    titleSection.style.height = 180;
+}
+
+function collapseTitleSection() {
+    var titleSection = document.getElementById("title-section");
+    titleSection.style.height = 0;
+}
+
+function setHeights() {
+    var windowHeight = getWindowHeight() - 25;
+
+    var imageSection = document.getElementById("image-section");
+    imageSection.style.height = windowHeight * 2/3;
+    imageSection.style.maxHeight = windowHeight * 2/3;
+    var textSection = document.getElementById("text-section");
+    textSection.style.height = windowHeight * 1/3;
+    textSection.style.maxHeight = windowHeight * 1/3;
+}
+
 function addImage(attributes) {
   var imageElement = document.createElement("IMG");
   attributes = attributes || {};
@@ -60,6 +82,27 @@ function addText(text, attributes) {
   return textSection;
 }
 
+function addTextPointerHover(text, attributes) {
+    var textElement = document.createElement("P");
+    textElement.innerHTML = text;
+    attributes = attributes || {};
+    for (var key in attributes) {
+      if (attributes.hasOwnProperty(key)) {
+        textElement.setAttribute(key, attributes[key]);
+      }
+    }
+
+    var textContainer = document.createElement("DIV");
+    textContainer.setAttribute("id", "text-container");
+    textContainer.style.cursor = 'pointer';
+    textContainer.appendChild(textElement);
+
+    var textSection = document.getElementById("text-section");
+    textSection.appendChild(textContainer);
+
+    return textSection;
+}
+
 function removeTitle() {
   var titleContainer = document.getElementById("title-section");
   titleContainer.innerHTML = "";
@@ -73,4 +116,8 @@ function removeImage() {
 function removeText() {
   var textContainer = document.getElementById("text-section");
   textContainer.innerHTML = "";
+}
+
+function getWindowHeight() {
+    return (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
 }
