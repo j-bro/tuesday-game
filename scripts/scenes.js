@@ -417,23 +417,59 @@ function r3WindowScene() {
 function r3WindowAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
-  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    removeImage();
     addText("Always.");
   });
-  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1}, "+=1");
+  t.to("#image-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    r3DoorScene();
+  });
 }
 
 function r3WindowBScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
-  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    removeImage();
     addText("It is Tuesday. Things never change.")
+    addText("//Not ever.");
   });
+  t.to("#text-section", 2, {opacity:1}, "+=1");
+  t.to("#image-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    r3DoorScene();
+  });
+}
+
+function r3DoorScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+    addText("You know what will happen. // What always happens.");
+  });
+  t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">The door will open.", {"onclick": "r3DoorAScene()"});
+    addTextPointerHover(">Things will change.", {"onclick": "r3DoorBScene()"});
+  });
+}
+
+function r3DoorAScene() {
+  var t = new TimelineLite();
+}
+
+function r3DoorBScene() {
+  var t = new TimelineLite();
 }
