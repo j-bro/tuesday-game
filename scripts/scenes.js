@@ -461,15 +461,41 @@ function r3DoorScene() {
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">The door will open.", {"onclick": "r3DoorAScene()"});
-    addTextPointerHover(">Things will change.", {"onclick": "r3DoorBScene()"});
+    addTextPointerHover(">The door will open.", {"onclick": "r3Door2Scene()"});
+    addTextPointerHover(">Things will change.", {"onclick": "r3Door2Scene()"});
+  });
+}
+
+function r3Door2Scene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=1");
+  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.call(function() {
+    removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+    addText("As... expected...");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=3");
+  t.call(function() {
+    addTextPointerHover(">Go through door.", {"onclick": "r3DoorAScene()"});
+    addTextPointerHover(">Move on.", {"onclick": "r3BoxScene()"});
   });
 }
 
 function r3DoorAScene() {
   var t = new TimelineLite();
-}
-
-function r3DoorBScene() {
-  var t = new TimelineLite();
+  t.call(function() {
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    removeText();
+    addText("No. That's not... That's not how it goes.")
+});
+  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
 }
