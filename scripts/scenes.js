@@ -117,12 +117,15 @@ function r1DoorSceneOpen() {
     removeText();
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.delay(2);
+  //needs more delay between door opening and text appearing
+  t.call(function(){
     addText("As expected.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
-  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     removeImage();
@@ -242,9 +245,9 @@ function r2WindowPt2Scene() {
     removeText();
     addText("Time heals all wounds, does it not?");
   });
-  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1}, "+=2");
   t.to("#text-section", 2, {opacity:0});
-  t.to("#image-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0}, "+=2");
   t.call(function() {
     removeText();
     removeImage();
@@ -305,11 +308,6 @@ function r2DoorChoiceScene() {
   t.call(function() {
     removeText();
     addText("You see now, this always happens.");
-  t.to("#text-section", 2, {opacity:1});
-  t.to("#text-section", 2, {opacity:0});
-  });
-  t.call(function() {
-    removeText();
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
@@ -320,7 +318,7 @@ function r2DoorChoiceScene() {
 
 function r2DoorThroughScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0})
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("... Let us move on.")
@@ -351,14 +349,14 @@ function r2BoxScene() {
     addTextPointerHover(">The box will open.", {"onclick": "r2BoxOpenScene()"});
     addTextPointerHover(">The box will stay closed.", {"onclick": "r2BoxCloseScene()"});
   });
+}
+//needs to be delay between selection and box opening
+function r2BoxOpenScene() {
+  var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
   box.setAttribute("src", "img/gifs/box_large.gif");
   });
-}
-
-function r2BoxOpenScene() {
-  var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -372,6 +370,10 @@ function r2BoxOpenScene() {
 
 function r2BoxCloseScene() {
   var t = new TimelineLite();
+  t.call(function() {
+  var box = document.getElementById("r1-box");
+  box.setAttribute("src", "img/gifs/box_large.gif");
+  });
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -414,8 +416,7 @@ function r3WindowScene() {
   t.call(function() {
     removeText();
     removeImage();
-    addText("It it raining.");
-    addText("//Always. // Always.");
+    addText("It it raining. //Always. // Always.");
     addImage({"alt": "",
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
@@ -437,8 +438,8 @@ function r3WindowAScene() {
     addText("Always.");
   });
   t.to("#text-section", 2, {opacity:1});
-  t.to("#image-section", 2, {opacity:0});
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeImage();
     removeText();
@@ -483,7 +484,7 @@ function r3DoorScene() {
 
 function r3Door2Scene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0}, "+4");
   t.call(function() {
     removeText();
     addText("... This...");
@@ -502,7 +503,7 @@ function r3Door2Scene() {
     addTextPointerHover(">Move on.", {"onclick": "r3BoxScene()"});
   });
 }
-//weird delays after 'go through door', timing too sudden
+//weird delays after 'go through door', timing too sudden, fade out doesn't work
 function r3DoorAScene() {
   var t = new TimelineLite();
   t.to("#textsection", 2, {opacity:0});
@@ -512,5 +513,42 @@ function r3DoorAScene() {
     dor.setAttribute("src", "img/gifs/door_shut.gif");
     addText("No. That's not... That's not how it goes.")
 });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    r3BoxScene();
+  });
+}
+
+function r3BoxScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/frames/box_large1.png",
+              "id": "r1-box",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("We know... What always happens... // Don't we?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Do we?", {"onclick": "r3Box2Scene()"});
+    addTextPointerHover(">Do you?", {"onclick": "r3Box2Scene()"});
+  });
+}
+
+function r3Box2Scene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
   t.to("#text-section", 2, {opacity:1});
 }
