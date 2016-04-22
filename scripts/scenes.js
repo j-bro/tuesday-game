@@ -546,9 +546,53 @@ function r3Box2Scene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0})
   t.call(function() {
+    removeText();
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
     addText("Thank goodness.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    addTextPointerHover(">Look inside.", {"onclick": "r3Box2AScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "r4WindowScene()"});
+  });
+}
+//shutfast gif jumps at beginning?
+function r3Box2AScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("No.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+  });
+}
+
+function r4WindowScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/gifs/window_large.gif",
+              "id": "r1-window-image",
+              "width": "400"});
+    addText("...It is Tuesday. // Isn't it?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    var win = document.getElementById("rw-window-image");
+    box.setAttribute("src", "img/gifs/window_largeslow.gif");
+  });
 }
