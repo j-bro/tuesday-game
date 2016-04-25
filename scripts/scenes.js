@@ -13,8 +13,9 @@ function tuesdayTitleScene() {
   });
   t.delay(1);
   t.call(function() {
-    addTitlePointerHover(">START", 3, {"onclick": "r1WindowScene()"});
+    addTextPointerHover(">START", {"onclick": "r1WindowScene()"});
   });
+  t.to("#text-section", 2, {opacity:1});
 }
 
 //make title sequence more of a title page: give a >START option and info about game
@@ -22,8 +23,10 @@ function tuesdayTitleScene() {
 
 function r1WindowScene() {
   var t = new TimelineLite();
-  t.to("#title-section", 3, {opacity:0}, "+=2");
+  t.to("text-secion", 2, {opacity:0});
+  t.to("#title-section", 3, {opacity:0});
   t.call(function() {
+    removeText();
     removeTitle();
     collapseTitleSection();
     addImage({"alt": "",
@@ -31,6 +34,7 @@ function r1WindowScene() {
               "id": "r1-window-image",
               "width": "400"});
   });
+  t.to("#text-section", 2, {opacity:1});
   t.to("#image-section", 3, {opacity:1});
   t.call(function() {
     addText("It is Tuesday. It is raining.");
@@ -596,28 +600,29 @@ function r4WindowScene() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/gifs/window_largeslow.gif");
   });
-  t.delay(1);
+  t.addDelay(1);
   t.call(function() {
+    console.log("after 5");
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/gifs/window_largeslow2.gif");
   });
-  t.delay(1);
+  t.addDelay(1);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/gifs/window_largeslow3.gif");
   });
-  t.delay(1);
+  t.addDelay(1);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/gifs/window_largeslow4.gif");
   });
-  t.delay(1);
+  t.addDelay(1);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/gifs/window_largeslow5.gif");
   });
   //how to get proper delays in between gifs in this section?
   t.call(function() {
-    
+
   });
 }
