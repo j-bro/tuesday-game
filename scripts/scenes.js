@@ -11,7 +11,7 @@ function tuesdayTitleScene() {
   t.call(function() {
     addTitle("What will you choose to do?", 4);
   });
-  t.delay(1);
+  t.addDelay(2);
   t.call(function() {
     addTextPointerHover(">START", {"onclick": "r1WindowScene()"});
   });
@@ -34,7 +34,6 @@ function r1WindowScene() {
               "id": "r1-window-image",
               "width": "400"});
   });
-  t.to("#text-section", 2, {opacity:1});
   t.to("#image-section", 3, {opacity:1});
   t.call(function() {
     addText("It is Tuesday. It is raining.");
@@ -67,6 +66,7 @@ function r1WindowAScene() {
     removeImage();
     r1DoorScene();
   });
+}
 
 function r1WindowBScene() {
   var t = new TimelineLite();
@@ -411,6 +411,7 @@ function r2ABoxBScene() {
   t.to("#text-section", 1, {opacity:1});
   t.call(function() {
     r2ABoxBPostScene();
+  });
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -655,5 +656,9 @@ function r4WindowScene() {
 
 function r4DoorScene() {
   var t = new TimelineLite();
-
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    removeimage();
+  });
 }
