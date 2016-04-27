@@ -48,17 +48,32 @@ function r1WindowScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover("> Wait.", {'onclick': 'r1StopRainScene()'});
-    addTextPointerHover("> Watch.", {'onclick': 'r1StopRainScene()'});
+    addTextPointerHover("> Wait.", {'onclick': 'r1WindowAScene()'});
+    addTextPointerHover("> Watch.", {'onclick': 'r1WindowBScene()'});
   });
 }
 
-function r1StopRainScene() {
+function r1WindowAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function(){
     removeText();
-    addText("Evidently.");
+    addText("We have all the time we need.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function(){
+    removeImage();
+    r1DoorScene();
+  });
+
+function r1WindowBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function(){
+    removeText();
+    addText("There is beauty in constants.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -83,12 +98,12 @@ function r1DoorScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover("> Yes", {"onclick": "r1AfterDoorYesScene()"});
-    addTextPointerHover("> No", {"onclick": "r1AfterDoorNoScene()"});
+    addTextPointerHover("> Yes", {"onclick": "r1DoorAScene()"});
+    addTextPointerHover("> No", {"onclick": "r1DoorBScene()"});
   });
 }
 
-function r1AfterDoorYesScene() {
+function r1DoorAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -97,11 +112,11 @@ function r1AfterDoorYesScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    r1DoorSceneOpen();
+    r1DoorOpenScene();
   });
 }
 
-function r1AfterDoorNoScene() {
+function r1DoorBScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -110,11 +125,11 @@ function r1AfterDoorNoScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    r1DoorSceneOpen();
+    r1DoorOpenScene();
   });
 }
 
-function r1DoorSceneOpen() {
+function r1DoorOpenScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -122,8 +137,7 @@ function r1DoorSceneOpen() {
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_once.gif");
   });
-  t.delay(2);
-  //needs more delay between door opening and text appearing
+  t.addDelay(1);
   t.call(function(){
     addText("As expected.");
   });
@@ -144,23 +158,20 @@ function r1BoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
-    addText("Ah yes. How quaint. ");
   });
   t.to("#image-section", 2, {opacity:1});
-  t.to("#text-section", 2, {opacity:1});
-  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("It is Tuesday. // What happens now?");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover("> The box will open.", {"onclick": "r1BoxGuessOpenScene()"});
-    addTextPointerHover("> The box will stay closed.", {"onclick": "r1BoxGuessCloseScene()"});
+    addTextPointerHover("> The box will open.", {"onclick": "r1BoxAScene()"});
+    addTextPointerHover("> The box will stay closed.", {"onclick": "r1BoxBScene()"});
   });
 }
 
-function r1BoxGuessOpenScene() {
+function r1BoxAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -171,11 +182,11 @@ function r1BoxGuessOpenScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    r1AfterBoxScene();
+    r2WindowScene();
   });
 }
 
-function r1BoxGuessCloseScene() {
+function r1BoxBScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -185,23 +196,18 @@ function r1BoxGuessCloseScene() {
     addText("This always happens. Did you not remember?");
   });
   t.to("#text-section", 2, {opacity:1});
-  t.call(function() {
-    r1AfterBoxScene();
-  });
-}
-
-function r1AfterBoxScene() {
-  var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addTextPointerHover("> Look Inside.", {"onclick": "r1AfterBoxLookScene()"});
-    addTextPointerHover("> Leave.", {"onclick": "r2WindowScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover("> Look Inside.", {"onclick": "r1BoxBPostScene()"});
+    addTextPointerHover("> Leave.", {"onclick": "r2WindowScene()"});
+  });
 }
 
-function r1AfterBoxLookScene() {
+function r1BoxBPostScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -271,25 +277,30 @@ function r2DoorScene() {
     t.to("#image-section", 2, {opacity:1});
     t.to("#text-section", 2, {opacity:1});
     t.call(function() {
-    addTextPointerHover("> The door opens.", {"onclick": "r2DoorGuessOpenScene()"});
-    addTextPointerHover("> The door stays closed.", {"onclick": "r2DoorGuessCloseScene()"});
+    addTextPointerHover("> The door opens.", {"onclick": "r2DoorAScene()"});
+    addTextPointerHover("> The door stays closed.", {"onclick": "r2DoorBScene()"});
   });
 }
 
-function r2DoorGuessOpenScene() {
+function r2DoorAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("Of course.");
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
+  addText("Of course.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    r2DoorChoiceScene();
+    r2ABoxScene();
   });
 }
 
-function r2DoorGuessCloseScene() {
+function r2DoorBScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -297,13 +308,6 @@ function r2DoorGuessCloseScene() {
     addText("Haven't you been paying attention?");
   });
   t.to("#text-section", 2, {opacity:1});
-  t.call(function() {
-    r2DoorChoiceScene();
-  });
-}
-
-function r2DoorChoiceScene() {
-  var t = new TimelineLite();
   t.call(function() {
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_once.gif");
@@ -315,12 +319,12 @@ function r2DoorChoiceScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover("> Go through door.", {"onclick": "r2DoorThroughScene()"});
-    addTextPointerHover("> Move on.", {"onclick": "r2BoxScene()"});
+    addTextPointerHover("> Go through door.", {"onclick": "r2DoorBPostScene()"});
+    addTextPointerHover("> Move on.", {"onclick": "r2ABoxScene()"});
   });
 }
 
-function r2DoorThroughScene() {
+function r2DoorBPostScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -330,11 +334,32 @@ function r2DoorThroughScene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
-    r2BoxScene();
+    r2BBoxScene();
   });
 }
-
-function r2BoxScene() {
+//THIS IS WHERE FIRST DIVERGENCE HAPPENS^ r2A vs r2B (B not coded)
+function r2ABoxScene() {
+  var t = new TimelineLite();
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/frames/box_large1.png",
+              "id": "r1-box",
+              "width": "400"});
+    addText("See? Nothing changes on Tuesdays.");
+    addText("// You know what happens next, don't you?");
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">The box will open.", {"onclick": "r2ABoxAScene()"});
+    addTextPointerHover(">The box will stay closed.", {"onclick": "r2ABoxBScene()"});
+  });
+}
+//this below path is invalid, B route has not been coded
+function r2BBoxScene() {
   var t = new TimelineLite();
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
@@ -355,7 +380,7 @@ function r2BoxScene() {
   });
 }
 //needs to be delay between selection and box opening
-function r2BoxOpenScene() {
+function r2ABoxAScene() {
   var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
@@ -368,11 +393,11 @@ function r2BoxOpenScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    r2BoxGuessScene();
+    r3AWindowScene();
   });
 }
 
-function r2BoxCloseScene() {
+function r2ABoxBScene() {
   var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
@@ -385,22 +410,17 @@ function r2BoxCloseScene() {
   });
   t.to("#text-section", 1, {opacity:1});
   t.call(function() {
-    r2BoxGuessScene();
-  });
-}
-
-function r2BoxGuessScene() {
-  var t = new TimelineLite();
+    r2ABoxBPostScene();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addTextPointerHover(">Leave.", {"onclick": "r3WindowScene()"});
-    addTextPointerHover(">Look inside.", {"onclick": "r2BoxGuessAfterScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "r3WAindowScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "r2ABoxBPostScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
 }
 
-function r2BoxGuessAfterScene() {
+function r2ABoxBPostScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -409,11 +429,11 @@ function r2BoxGuessAfterScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function(){
-    r3WindowScene();
+    r3AWindowScene();
   });
 }
 
-function r3WindowScene() {
+function r3AWindowScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
@@ -571,12 +591,6 @@ function r3Box2AScene() {
     addText("No!");
   });
   t.to("#text-section", 2, {opacity:0});
-  t.call(function() {
-    removeText();
-    addText("No.");
-  });
-  t.to("#text-section", 2, {opacity:1});
-  t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -621,8 +635,25 @@ function r4WindowScene() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/gifs/window_largeslow5.gif");
   });
-  //how to get proper delays in between gifs in this section?
+  t.addDelay(1);
   t.call(function() {
-
+    var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/frames/window_empty.png");
   });
+  t.addDelay(2);
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("... // ........ // ");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    r4DoorScene();
+  });
+}
+
+function r4DoorScene() {
+  var t = new TimelineLite();
+
 }
