@@ -296,7 +296,7 @@ function r2DoorAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    r2ABoxScene();
+    Ar2BoxScene();
   });
 }
 
@@ -320,7 +320,7 @@ function r2DoorBScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addTextPointerHover("> Go through door.", {"onclick": "r2DoorBPostScene()"});
-    addTextPointerHover("> Move on.", {"onclick": "r2ABoxScene()"});
+    addTextPointerHover("> Move on.", {"onclick": "Ar2BoxScene()"});
   });
 }
 
@@ -334,11 +334,11 @@ function r2DoorBPostScene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
-    r2BBoxScene();
+    Br2BoxScene();
   });
 }
 //THIS IS WHERE FIRST DIVERGENCE HAPPENS^ r2A vs r2B (B not coded)
-function r2ABoxScene() {
+function Ar2BoxScene() {
   var t = new TimelineLite();
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
@@ -348,18 +348,18 @@ function r2ABoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
-    addText("See? Nothing changes on Tuesdays.");
+    addText("Nothing changes on Tuesdays.");
     addText("// You know what happens next, don't you?");
   });
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">The box will open.", {"onclick": "r2ABoxAScene()"});
-    addTextPointerHover(">The box will stay closed.", {"onclick": "r2ABoxBScene()"});
+    addTextPointerHover(">The box will open.", {"onclick": "Ar2BoxAScene()"});
+    addTextPointerHover(">The box will stay closed.", {"onclick": "Ar2BoxBScene()"});
   });
 }
-//this below path is invalid, B route has not been coded
-function r2BBoxScene() {
+
+function Br2BoxScene() {
   var t = new TimelineLite();
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
@@ -375,12 +375,13 @@ function r2BBoxScene() {
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">The box will open.", {"onclick": "r2BoxOpenScene()"});
-    addTextPointerHover(">The box will stay closed.", {"onclick": "r2BoxCloseScene()"});
+    addTextPointerHover(">The box will open.", {"onclick": "Br2BoxAScene()"});
+    addTextPointerHover(">The box will stay closed.", {"onclick": "Br2BoxBScene()"});
   });
 }
 //needs to be delay between selection and box opening
-function r2ABoxAScene() {
+
+function Br2BoxAScene() {
   var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
@@ -393,11 +394,28 @@ function r2ABoxAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    r3AWindowScene();
+    Br3WindowScene();
   });
 }
 
-function r2ABoxBScene() {
+function Ar2BoxAScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+  var box = document.getElementById("r1-box");
+  box.setAttribute("src", "img/gifs/box_large.gif");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("This always happens.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Ar3WindowScene();
+  });
+}
+
+function Br2BoxBScene() {
   var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
@@ -410,18 +428,42 @@ function r2ABoxBScene() {
   });
   t.to("#text-section", 1, {opacity:1});
   t.call(function() {
-    r2ABoxBPostScene();
+    Ar2BoxBPostScene();
   });
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addTextPointerHover(">Leave.", {"onclick": "r3WAindowScene()"});
-    addTextPointerHover(">Look inside.", {"onclick": "r2ABoxBPostScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Br3WindowScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Br2BoxBPostScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
 }
 
-function r2ABoxBPostScene() {
+function Ar2BoxBScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+  var box = document.getElementById("r1-box");
+  box.setAttribute("src", "img/gifs/box_large.gif");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...This always happens.");
+  });
+  t.to("#text-section", 1, {opacity:1});
+  t.call(function() {
+    Ar2BoxBPostScene();
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addTextPointerHover(">Leave.", {"onclick": "Ar3WindowScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Ar2BoxBPostScene()"});
+  });
+  t.to("#text-section", 2, {opacity:1});
+}
+
+function Br2BoxBPostScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -430,11 +472,46 @@ function r2ABoxBPostScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function(){
-    r3AWindowScene();
+    Cr3WindowScene();
   });
 }
 
-function r3AWindowScene() {
+function Ar2BoxBPostScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("No. That never happens.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function(){
+    Ar3WindowScene();
+  });
+}
+
+//SECON DIVERGENCE
+function Ar3WindowScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addText("It it always raining. // Always.");
+    addImage({"alt": "",
+              "src": "img/gifs/window_large.gif",
+              "id": "r1-window-image",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Always.", {"onclick": "Ar3DoorAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "Ar3DoorBScene()"});
+  });
+}
+
+function Br3WindowScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
@@ -450,12 +527,64 @@ function r3AWindowScene() {
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Always.", {"onclick": "r3WindowAScene()"});
-    addTextPointerHover(">Things change.", {"onclick": "r3WindowBScene()"});
+    addTextPointerHover(">Always.", {"onclick": "Br3DoorAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "Br3DoorBScene()"});
   });
 }
 
-function r3WindowAScene() {
+function Cr3WindowScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addText("It it raining. //Always. // Always.");
+    addText("// Always.");
+    addImage({"alt": "",
+              "src": "img/gifs/window_large.gif",
+              "id": "r1-window-image",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Always.", {"onclick": "Cr3DoorAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "Cr3DoorBScene()"});
+  });
+}
+//splits have been coded to his point
+
+//below section should link straight to door scene
+function Ar3DoorBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("It is Tuesday. Things never change.")
+    addText("// Not ever.");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=1");
+  t.to("#image-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+    addText("You know what will happen. // What always happens.");
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">The door will open.", {"onclick": "Ar3DoorBAScene()"});
+    addTextPointerHover(">Things will change.", {"onclick": "Ar3DoorBBScene()"});
+  });
+}
+
+function Ar3DoorAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -468,46 +597,43 @@ function r3WindowAScene() {
   t.call(function() {
     removeImage();
     removeText();
-    r3DoorScene();
-  });
-}
-
-function r3WindowBScene() {
-  var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0});
-  t.call(function() {
-    removeText();
-    addText("It is Tuesday. Things never change.")
-    addText("//Not ever.");
-  });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#image-section", 2, {opacity:0});
-  t.to("#text-section", 2, {opacity:0});
-  t.call(function() {
-    removeImage();
-    removeText();
-    r3DoorScene();
-  });
-}
-
-function r3DoorScene() {
-  var t = new TimelineLite();
-  t.call(function() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
-    addText("You know what will happen. // What always happens.");
+    addText("You know what will happen. // Has always happened.");
   });
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">The door will open.", {"onclick": "r3Door2Scene()"});
-    addTextPointerHover(">Things will change.", {"onclick": "r3Door2Scene()"});
+    addTextPointerHover(">The door will open.", {"onclick": "Ar3DoorAAScene()"});
+    addTextPointerHover(">Things will change.", {"onclick": "Ar3DoorABScene()"});
   });
 }
 
-function r3Door2Scene() {
+function Ar3DoorAAScene();
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0,});
+  t.call(function() {
+    removeText();
+    addText("Good. You haven't forgotten.");
+    addText("// You haven't changed.");
+    Ar3BoxAScene();
+  });
+}
+
+function Ar3DoorBAScene();
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0,});
+  t.call(function() {
+    removeText();
+    addText("That's right. Things haven't changed.");
+    addText("// You haven't changed.");
+    Ar3BoxBScene();
+  });
+}
+
+function Ar3DoorABScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0}, "+4");
   t.call(function() {
@@ -524,12 +650,54 @@ function r3Door2Scene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Go through door.", {"onclick": "r3DoorAScene()"});
-    addTextPointerHover(">Move on.", {"onclick": "r3BoxScene()"});
+    addTextPointerHover(">Go through door.", {"onclick": "Ar3DoorABBScene()"});
+    addTextPointerHover(">Move on.", {"onclick": "Ar3BoxAScene()"});
   });
 }
+
+function Ar3DoorBBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0}, "+4");
+  t.call(function() {
+    removeText();
+    addText("... This...");
+  });
+  t.to("#text-section", 2, {opacity:1}, "+=1");
+  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.call(function() {
+    removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+    addText("As... expected...");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Go through door.", {"onclick": "Ar3DoorBBBScene()"});
+    addTextPointerHover(">Move on.", {"onclick": "Ar3BoxBScene()"});
+  });
+}
+
 //weird delays after 'go through door', timing too sudden, fade out doesn't work
-function r3DoorAScene() {
+function Ar3DoorABBScene() {
+  var t = new TimelineLite();
+  t.to("#textsection", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    addText("No. That's not... That's not how it goes.");
+});
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    Ar3BoxBScene();
+  });
+}
+
+function Ar3DoorBBBScene() {
   var t = new TimelineLite();
   t.to("#textsection", 2, {opacity:0});
   t.call(function() {
@@ -544,11 +712,11 @@ function r3DoorAScene() {
   t.call(function() {
     removeImage();
     removeText();
-    r3BoxScene();
+    Br3BoxAScene();
   });
 }
 
-function r3BoxScene() {
+function Ar3BoxAScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
@@ -566,6 +734,26 @@ function r3BoxScene() {
     addTextPointerHover(">Do you?", {"onclick": "r3Box2Scene()"});
   });
 }
+
+function Ar3BoxBScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/frames/box_large1.png",
+              "id": "r1-box",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("We know... What always happens... // Don't we?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Do we?", {"onclick": "r3Box2Scene()"});
+    addTextPointerHover(">Do you?", {"onclick": "r3Box2Scene()"});
+  });
+}
+
 
 function r3Box2Scene() {
   var t = new TimelineLite();
@@ -660,5 +848,14 @@ function r4DoorScene() {
   t.call(function() {
     removeText();
     removeimage();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
   });
+  t.addDelay(2);
+  t.call(function() {
+    addText("We should be safe here.");
+  });
+  t.to("#text-section", 2, {opacity:1});
 }
