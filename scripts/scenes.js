@@ -202,8 +202,8 @@ function r1BoxBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover("> Look Inside.", {"onclick": "r1BoxBPostScene()"});
     addTextPointerHover("> Leave.", {"onclick": "r2WindowScene()"});
+    addTextPointerHover("> Look Inside.", {"onclick": "r1BoxBPostScene()"});
   });
 }
 
@@ -319,8 +319,8 @@ function r2DoorBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover("> Go through door.", {"onclick": "r2DoorBPostScene()"});
     addTextPointerHover("> Move on.", {"onclick": "Ar2BoxScene()"});
+    addTextPointerHover("> Go through door.", {"onclick": "r2DoorBPostScene()"});
   });
 }
 
@@ -433,8 +433,8 @@ function Br2BoxBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addTextPointerHover(">Leave.", {"onclick": "Br3WindowScene()"});
     addTextPointerHover(">Look inside.", {"onclick": "Br2BoxBPostScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Br3WindowScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
 }
@@ -457,8 +457,8 @@ function Ar2BoxBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addTextPointerHover(">Leave.", {"onclick": "Ar3WindowScene()"});
     addTextPointerHover(">Look inside.", {"onclick": "Ar2BoxBPostScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Ar3WindowScene()"});
   });
   t.to("#text-section", 2, {opacity:1});
 }
@@ -489,7 +489,8 @@ function Ar2BoxBPostScene() {
   });
 }
 
-//SECON DIVERGENCE
+//weirdly fast movements before r3windows
+
 function Ar3WindowScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
@@ -553,9 +554,6 @@ function Cr3WindowScene() {
     addTextPointerHover(">Things change.", {"onclick": "Cr3DoorBScene()"});
   });
 }
-//splits have been coded to his point
-
-//below section should link straight to door scene
 
 function Ar3DoorAScene() {
   var t = new TimelineLite();
@@ -593,8 +591,8 @@ function Ar3DoorBScene() {
     addText("// Not ever.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#image-section", 2, {opacity:0});
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeImage();
     removeText();
@@ -648,8 +646,8 @@ function Br3DoorBScene() {
     addText("// Not ever.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#image-section", 2, {opacity:0});
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeImage();
     removeText();
@@ -703,8 +701,8 @@ function Cr3DoorBScene() {
     addText("// Not ever.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#image-section", 2, {opacity:0});
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeImage();
     removeText();
@@ -740,6 +738,7 @@ function Ar3DoorBAScene() {
     removeText();
     addText("That's right. Things haven't changed.");
     addText("// You haven't changed.");
+    removeImage();
     Br3BoxScene();
   });
 }
@@ -761,8 +760,8 @@ function Ar3DoorABScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Go through door.", {"onclick": "Ar3DoorABBScene()"});
     addTextPointerHover(">Move on.", {"onclick": "Ar3BoxScene()"});
+    addTextPointerHover(">Go through door.", {"onclick": "Ar3DoorABBScene()"});
   });
 }
 
@@ -783,8 +782,8 @@ function Ar3DoorBBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Go through door.", {"onclick": "Ar3DoorBBBScene()"});
     addTextPointerHover(">Move on.", {"onclick": "Br3BoxScene()"});
+    addTextPointerHover(">Go through door.", {"onclick": "Ar3DoorBBBScene()"});
   });
 }
 
@@ -828,8 +827,8 @@ function Br3DoorABScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Go through door.", {"onclick": "Br3DoorABBScene()"});
     addTextPointerHover(">Move on.", {"onclick": "Br3BoxScene()"});
+    addTextPointerHover(">Go through door.", {"onclick": "Br3DoorABBScene()"});
   });
 }
 
@@ -850,8 +849,8 @@ function Br3DoorBBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Go through door.", {"onclick": "Br3DoorBBBScene()"});
     addTextPointerHover(">Move on.", {"onclick": "Br3BoxScene()"});
+    addTextPointerHover(">Go through door.", {"onclick": "Br3DoorBBBScene()"});
   });
 }
 
@@ -894,8 +893,8 @@ function Cr3DoorABScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Go through door.", {"onclick": "Cr3DoorABBScene()"});
     addTextPointerHover(">Move on.", {"onclick": "Br3BoxScene()"});
+    addTextPointerHover(">Go through door.", {"onclick": "Cr3DoorABBScene()"});
   });
 }
 
@@ -916,15 +915,14 @@ function Cr3DoorBBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Go through door.", {"onclick": "Cr3DoorBBBScene()"});
     addTextPointerHover(">Move on.", {"onclick": "Cr3BoxScene()"});
+    addTextPointerHover(">Go through door.", {"onclick": "Cr3DoorBBBScene()"});
   });
 }
 
-//weird delays after 'go through door', timing too sudden, fade out doesn't work
 function Ar3DoorABBScene() {
   var t = new TimelineLite();
-  t.to("#textsection", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -943,7 +941,7 @@ function Ar3DoorABBScene() {
 
 function Ar3DoorBBBScene() {
   var t = new TimelineLite();
-  t.to("#textsection", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -962,7 +960,7 @@ function Ar3DoorBBBScene() {
 
 function Br3DoorABBScene() {
   var t = new TimelineLite();
-  t.to("#textsection", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -981,7 +979,7 @@ function Br3DoorABBScene() {
 
 function Br3DoorBBBScene() {
   var t = new TimelineLite();
-  t.to("#textsection", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -1000,7 +998,7 @@ function Br3DoorBBBScene() {
 
 function Cr3DoorABBScene() {
   var t = new TimelineLite();
-  t.to("#textsection", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -1019,7 +1017,7 @@ function Cr3DoorABBScene() {
 
 function Cr3DoorBBBScene() {
   var t = new TimelineLite();
-  t.to("#textsection", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -1050,8 +1048,8 @@ function Ar3BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Do we?", {"onclick": "r3Box2Scene()"});
-    addTextPointerHover(">Do you?", {"onclick": "r3Box2Scene()"});
+    addTextPointerHover(">The box will open.", {"onclick": "Ar3BoxAScene()"});
+    addTextPointerHover(">The box will stay closed.", {"onclick": "Ar3BoxBScene()"});
   });
 }
 
@@ -1069,8 +1067,8 @@ function Br3BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Do we?", {"onclick": "r3Box2Scene()"});
-    addTextPointerHover(">Do you?", {"onclick": "r3Box2Scene()"});
+    addTextPointerHover(">The box will open.", {"onclick": "Br3BoxAScene()"});
+    addTextPointerHover(">The box will stay closed.", {"onclick": "Br3BoxBScene()"});
   });
 }
 
@@ -1088,8 +1086,8 @@ function Cr3BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Do we?", {"onclick": "r3Box2Scene()"});
-    addTextPointerHover(">Do you?", {"onclick": "r3Box2Scene()"});
+    addTextPointerHover(">Will the box open?", {"onclick": "Cr3BoxAScene()"});
+    addTextPointerHover(">Will the box stay closed?", {"onclick": "Cr3BoxBScene()"});
   });
 }
 
@@ -1107,12 +1105,12 @@ function Dr3BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Do we?", {"onclick": "r3Box2Scene()"});
-    addTextPointerHover(">Do you?", {"onclick": "r3Box2Scene()"});
+    addTextPointerHover(">Do we?", {"onclick": "Dr3Box2Scene()"});
+    addTextPointerHover(">Do you?", {"onclick": "Dr3Box2Scene()"});
   });
 }
 
-function r3Box2Scene() {
+function Ar3BoxAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0})
   t.call(function() {
@@ -1123,12 +1121,120 @@ function r3Box2Scene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function () {
-    addTextPointerHover(">Look inside.", {"onclick": "r3Box2AScene()"});
-    addTextPointerHover(">Leave.", {"onclick": "r4WindowScene()"});
+    Ar4WindowScene();
   });
 }
-//shutfast gif jumps at beginning?
-function r3Box2AScene() {
+
+function Ar3BoxBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    addTextPointerHover(">Leave.", {"onclick": "Ar3BoxBAScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Ar3BoxBBScene()"});
+  });
+}
+
+function Br3BoxAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    Br4WindowScene();
+  });
+}
+
+function Br3BoxBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    addTextPointerHover(">Leave.", {"onclick": "Br3BoxBAScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Br3BoxBBScene()"});
+  });
+}
+
+function Cr3BoxAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    Cr4WindowScene();
+  });
+}
+
+function Cr3BoxBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    addTextPointerHover(">Leave.", {"onclick": "Cr3BoxBAScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Cr3BoxBBScene()"});
+  });
+}
+
+function Dr3BoxAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    Dr4WindowScene();
+  });
+}
+
+function Dr3BoxBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0})
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_large.gif");
+    addText("Thank goodness.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function () {
+    addTextPointerHover(">Leave.", {"onclick": "Dr3BoxBAScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Dr3BoxBBScene()"});
+  });
+}
+
+function Ar3BoxBAScene() {
   var t = new TimelineLite();
   t.call(function() {
     removeText();
@@ -1141,11 +1247,130 @@ function r3Box2AScene() {
   t.call(function() {
     removeText();
     removeImage();
-    r4WindowScene();
+    Br4WindowScene();
   });
 }
 
-function r4WindowScene() {
+function Ar3BoxBBScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    Br4WindowScene();
+  });
+}
+
+function Br3BoxBAScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    Br4WindowScene();
+  });
+}
+
+function Br3BoxBBScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    Cr4WindowScene();
+  });
+}
+
+function Cr3BoxBAScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    Br4WindowScene();
+  });
+}
+
+function Cr3BoxBBScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    Cr4WindowScene();
+  });
+}
+
+function Dr3BoxBAScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    Cr4WindowScene();
+  });
+}
+
+function Dr3BoxBBScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    addText("No!");
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    Dr4WindowScene();
+  });
+}
+
+function Dr4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
