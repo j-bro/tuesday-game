@@ -1370,6 +1370,125 @@ function Dr3BoxBBScene() {
   });
 }
 
+function Ar4WindowScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addText("It is Tuesday. It has always been Tuesday.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">It is Tuesday.", {"on click": "Ar4DoorAScene()"});
+    addTextPointerHover(">Is it still Tuesday?", {"on click": "Ar4DoorBScene()"});
+  });
+}
+
+function Ar4DoorAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("That's right. You always know.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("It is Tuesday. And you've always been here.")
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Always.", {"on click": "Ar4DoorAAScene()"});
+    addTextPointerHover(">Things change.", {"on click": "Ar4DoorABScene()"});
+  });
+}
+
+function Ar4DoorBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("It is Tuesday. Remember.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("Tuesday. And you've always been here.")
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Always.", {"on click": "Ar4DoorBAScene()"});
+    addTextPointerHover(">Things change.", {"on click": "Ar4DoorBBScene()"});
+  });
+}
+
+function Ar4DoorAAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Always.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Ar4BoxScene();
+  });
+}
+
+function Ar4DoorABScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    addText("Do they need to?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Br4BoxScene();
+  });
+}
+
+function Ar4DoorBAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Always.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Ar4BoxScene();
+  });
+}
+
+function Ar4DoorBBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    addText("Do they need to?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Br4BoxScene();
+  });
+}
+
+
 function Dr4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
