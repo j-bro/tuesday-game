@@ -337,7 +337,7 @@ function r2DoorBPostScene() {
     Br2BoxScene();
   });
 }
-//THIS IS WHERE FIRST DIVERGENCE HAPPENS^ r2A vs r2B (B not coded)
+
 function Ar2BoxScene() {
   var t = new TimelineLite();
   t.to("#image-section", 2, {opacity:0});
@@ -379,7 +379,6 @@ function Br2BoxScene() {
     addTextPointerHover(">The box will stay closed.", {"onclick": "Br2BoxBScene()"});
   });
 }
-//needs to be delay between selection and box opening
 
 function Br2BoxAScene() {
   var t = new TimelineLite();
@@ -488,8 +487,6 @@ function Ar2BoxBPostScene() {
     Ar3WindowScene();
   });
 }
-
-//weirdly fast movements before r3windows
 
 function Ar3WindowScene() {
   var t = new TimelineLite();
@@ -1044,7 +1041,8 @@ function Ar3BoxScene() {
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
-    addText("We know what always happens. // This always happens.");
+    addText("Nothing changes. We know what always happens.")
+    addText("// This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
@@ -1117,7 +1115,8 @@ function Ar3BoxAScene() {
     removeText();
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
-    addText("Thank goodness.");
+    addText("We're never wrong.");
+    addText("// This always happens.")
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function () {
@@ -1437,6 +1436,10 @@ function Ar4DoorBScene() {
     addTextPointerHover(">Things change.", {"on click": "Ar4DoorBBScene()"});
   });
 }
+//UNCODED B PATH
+function Br4WindowScene() {
+  var t = new TimelineLite();
+}
 
 function Ar4DoorAAScene() {
   var t = new TimelineLite();
@@ -1488,6 +1491,171 @@ function Ar4DoorBBScene() {
   });
 }
 
+function Ar4BoxScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/frames/box_large1.png",
+              "id": "r1-box",
+              "width": "400"});
+    addText("I'm going to show you something.");
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Look inside.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Look inside.", {"on click": "Ar4BoxAScene()"});
+    addTextPointerHover(">Leave.", {"on click": "Ar4BoxA2Scene()"});
+  });
+}
+
+function Ar4BoxA2Scene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Don't be shy. It's alright.");
+    addTextPointerHover(">Look inside.", {"on click": "Ar4BoxBScene()"});
+  });
+}
+
+function Ar4BoxAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/frames/boxinside with key.png",
+              "id": "r4-key",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.addDelay(1);
+  t.call(function() {
+    addText("I'm giving you a choice. // One final decision.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You've always done the right thing. You've always known...");
+    addText("What's best for us.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("And now you can choose what's best for you.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"on click": "Ar4BoxABScene()"});
+  });
+}
+
+function Ar4BoxBScene(){
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/frames/boxinside with key.png",
+              "id": "r4-key",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.addDelay(1);
+  t.call(function() {
+    addText("I'm giving you a choice. // One final decision.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You've always done the right thing. You've always known...");
+    addText("What's best for us.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("And now you can choose what's best for you.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"on click": "Ar4BoxBBScene()"});
+  });
+}
+
+function Ar4BoxAAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    var key = document.getElementById("r4-key");
+    key.setAttribute("src", "img/frames/boxinside no key.png");
+  });
+  t.addDelay(1);
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    addText("There. You always listen.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Ar4FinaleScene();
+  });
+}
+
+function Ar4BoxABScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...You always listened. What is happening?");
+    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"on click": "Ar4BoxBBBScene()"});
+  });
+}
+
+function Ar4BoxBBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("... I'm telling you to take it.")
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"on click": "Br4FinaleScene()"});
+  });
+}
+
+//UNCODED B PATH
+function Br4BoxScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+  });
+}
 
 function Dr4WindowScene() {
   var t = new TimelineLite();
@@ -1667,7 +1835,7 @@ function Dr4BoxBBScene() {
   t.call(function() {
     removeText();
     addImage({"alt": "",
-              "src": "img/frame/boxinside with key.png",
+              "src": "img/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -1710,7 +1878,7 @@ function Dr4BoxBABScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/frame/boxinside with key.png",
+              "src": "img/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -1721,7 +1889,7 @@ function Dr4BoxBABScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"on click": "Dr4FinaleB1Scene()"});
+    addTextPointerHover(">Take key.", {"on click": "Dr4FinaleScene()"});
     addTextPointerHover(">Stay.", {"on click": "Dr4FinaleXXXScene()"});
   });
 }
@@ -1746,15 +1914,153 @@ function Dr4BoxBBBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    Dr4FinaleB1Scene();
+    Dr4FinaleScene();
   });
 }
 
-function Dr4FinaleB1Scene() {
+function Ar4FinaleScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
   t.addDelay(1);
-  t.call(function(){
-    Dr4FinaleB2Scene();
+  t.call(function() {
+    addText("Use it.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You've done so much for me.");
+    addText("// You've always been there. Always.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Now, I can repay the favor.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Leave.", {"on click": "Ar4FinaleAScene()"});
+  });
+}
+
+function Ar4FinaleAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  var dor = document.getElementById("r1-door-still");
+  dor.setAttribute("src", "img/gifs/door_once.gif");
+  t.addDelay(1);
+  t.call(function() {
+    removeText();
+    addText("Thank you.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removetext();
+    addText("You made the right choice.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.addDelay(1);
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    StatementScene();
+  });
+}
+
+function Br4FinaleScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addText("What happened to you?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Was it too difficult for you to chose one path?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    addText("To change? To behave?");
+    addText("Was it all too much?")
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+}
+
+function Cr4FinaleScene() {
+  var t = new TimelineLite();
+}
+
+function Dr4FinaleScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.addDelay(1);
+  t.call(function() {
+    addtext("I tried to stop you.");
+    addText("// Don't think that I didn't.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You, and your constant disagreeing.");
+    addText("Always choosing the wrong thing.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Always.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+  var dor = document.getElementById("r1-door-still");
+  dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
+    addText("Why did you do it?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    addText("What was it all for?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    StatementScene();
   });
 }
