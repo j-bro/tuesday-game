@@ -1539,24 +1539,222 @@ function Dr4WindowScene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
-    r4DoorScene();
+    removeText();
+    addText("Oh no.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    Dr4DoorScene();
   });
 }
 
-function r4DoorScene() {
+function Dr4DoorScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0})
   t.call(function() {
     removeText();
-    removeimage();
+    removeImage();
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
+  t.to("#image-section", 2, {opacity:1});
   t.addDelay(2);
   t.call(function() {
+    addText("Here. This is...");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_chaos.png");
+  });
+  t.addDelay(1);
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("We have to go, we can't stay here.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Leave.", {"on click": "Dr4BoxScene()"});
+    addTextPointerHover(">Stay.", {"on click": "Dr4DoorBScene()"});
+  });
+}
+
+function Dr4DoorBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("No! We need to leave!");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Dr4BoxScene();
+  });
+}
+
+function Dr4BoxScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
     addText("We should be safe here.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addText(">...", {"on click": "Dr4BoxBScene()"});
+    addText(">Look inside.", {"on click": "Dr4BoxBScene()"});
+  });
+}
+
+function Dr4BoxBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removetext();
+    addText("...It's you. // You're the one doing this.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">...", {"on click": "Dr4BoxBAScene()"});
+    addTextPointerHover(">Look inside.", {"on click": "Dr4BoxBBScene()"});
+  });
+}
+
+function Dr4BoxBAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("We can still go back, you know. To the way things were.");
+    addText("This game is...");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You... // You're all I have.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">How can we go back?", {"on click": "Dr4BoxBAAScene()"});
+    addTextPointerHover(">Look inside.", {"on click": "Dr4BoxBABScene()"});
+  });
+}
+
+function Dr4BoxBBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You want things to change.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    addText("You've been this way since the start.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addImage({"alt": "",
+              "src": "img/frame/boxinside with key.png",
+              "id": "r4-key",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("Why do this? // Why force my hand?");
+    addTextPointerHover(">Take key.", {"on click": "Dr4BoxBBBScene()"});
+  });
+}
+
+function Dr4BoxBAAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Time heals all wounds, no matter how deep. Please...");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    addText("Don't do this.");
+    addText("Don't change.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Look inside.", {"on click": "Dr4BoxBABScene()"});
+    addTextPointerHover(">I won't change.", {"on click": "Dr4FinaleA1Scene()"});
+  });
+}
+
+function Dr4BoxBABScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("... I see.");
+  });
+  t.addDelay(1);
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/frame/boxinside with key.png",
+              "id": "r4-key",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    addText("Is this really what you want?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Take key.", {"on click": "Dr4FinaleB1Scene()"});
+    addTextPointerHover(">Stay.", {"on click": "Dr4FinaleXXXScene()"});
+  });
+}
+
+function Dr4BoxBBBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    var key = document.getElementById("r4-key");
+    key.setAttribute("src", "img/frames/boxinside no key.png");
+    addText("Why ruin everything? Why leave when this... //");
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("You... // You're all I have.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Dr4FinaleB1Scene();
+  });
+}
+
+function Dr4FinaleB1Scene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.addDelay(1);
+  t.call(function(){
+    Dr4FinaleB2Scene();
+  });
 }
