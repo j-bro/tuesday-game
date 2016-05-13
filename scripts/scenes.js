@@ -2189,7 +2189,7 @@ function Dr4BoxScene() {
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addText(">...", {"on click": "Dr4BoxBScene()"});
+    addText(">...", {"on click": "Dr4BoxBAScene()"});
     addText(">Look inside.", {"on click": "Dr4BoxBScene()"});
   });
 }
@@ -2257,6 +2257,7 @@ function Dr4BoxBBScene() {
   t.call(function() {
     addText("Why do this? // Why force my hand?");
     addTextPointerHover(">Take key.", {"on click": "Dr4BoxBBBScene()"});
+    addTextPointerHover(">...", {"on click": "Dr4BoxBAAScene()"});
   });
 }
 
@@ -2276,7 +2277,7 @@ function Dr4BoxBAAScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addTextPointerHover(">Look inside.", {"on click": "Dr4BoxBABScene()"});
-    addTextPointerHover(">I won't change.", {"on click": "Dr4FinaleA1Scene()"});
+    addTextPointerHover(">I won't change.", {"on click": "Cr4FinaleScene()"});
   });
 }
 
@@ -2304,7 +2305,7 @@ function Dr4BoxBABScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addTextPointerHover(">Take key.", {"on click": "Dr4FinaleScene()"});
-    addTextPointerHover(">Stay.", {"on click": "Dr4FinaleXXXScene()"});
+    addTextPointerHover(">Stay.", {"on click": "Cr4FinaleScene()"});
   });
 }
 
@@ -2533,4 +2534,14 @@ function Dr4FinaleScene() {
     removeText();
     StatementScene();
   });
+}
+
+function StatementScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addText("'Tuesday' is a short video game about choice. For decades, this medium has been exploring every nook and cranny that choice had to offer; either players were thrown into storylines they had no control over, or their choices defined the story itself. Sometimes choice is as simple as deciding the playable character's gender. Other times, the only choice available is to chose whether or not you'll play the game.");
+    addText("'Tuesday' presents choice as a binary: 'Look inside' or 'Leave', 'Go through' or 'Move on'. Despite their seemingly restrained nature, the player's decisions add up and begin to define their interactions and eventually, the reactions of the game itself.");
+    addText("Special thanks to Jeremy Brown for all his help and for just generally being A Cool Dude.");
+  });
+  t.to("#text-section", 2, {opacity:1});
 }
