@@ -23,12 +23,21 @@ function addTitle(title, headingSize, attributes) {
 
 function expandTitleSection() {
     var titleSection = document.getElementById("title-section");
-
     titleSection.style.height = 180;
 }
 
 function collapseTitleSection() {
     var titleSection = document.getElementById("title-section");
+    titleSection.style.height = 0;
+}
+
+function expandImageSection() {
+    var titleSection = document.getElementById("image-section");
+    titleSection.style.height = 550;
+}
+
+function collapseImageSection() {
+    var titleSection = document.getElementById("image-section");
     titleSection.style.height = 0;
 }
 

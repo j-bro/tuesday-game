@@ -334,7 +334,7 @@ function r2DoorBPostScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("... Let us move on.")
+    addText("... Let us move on.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -591,7 +591,7 @@ function Ar3DoorBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("It is Tuesday. Things never change.")
+    addText("It is Tuesday. Things never change.");
     addText("// Not ever.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=1");
@@ -620,7 +620,7 @@ function Br3DoorAScene() {
   t.call(function() {
     removeText();
     addText("Always.");
-    addText("//Of course.")
+    addText("//Of course.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -647,7 +647,7 @@ function Br3DoorBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("It is Tuesday. Things never change.")
+    addText("It is Tuesday. Things never change.");
     addText("// Not ever.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=1");
@@ -702,7 +702,7 @@ function Cr3DoorBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("It is Tuesday. Things never change.")
+    addText("It is Tuesday. Things never change.");
     addText("// Not ever.");
   });
   t.to("#text-section", 2, {opacity:1}, "+=1");
@@ -970,7 +970,7 @@ function Ar3DoorBBBScene() {
     removeText();
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_shut.gif");
-    addText("No. That's not... That's not how it goes.")
+    addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1008,7 +1008,7 @@ function Br3DoorBBBScene() {
     removeText();
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_shut.gif");
-    addText("No. That's not... That's not how it goes.")
+    addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1046,7 +1046,7 @@ function Cr3DoorBBBScene() {
     removeText();
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_shut.gif");
-    addText("No. That's not... That's not how it goes.")
+    addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1070,7 +1070,7 @@ function Ar3BoxScene() {
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
-    addText("Nothing changes. We know what always happens.")
+    addText("Nothing changes. We know what always happens.");
     addText("// This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1145,7 +1145,7 @@ function Ar3BoxAScene() {
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
     addText("We're never wrong.");
-    addText("// This always happens.")
+    addText("// This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1179,7 +1179,7 @@ function Br3BoxAScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("Of course. This...")
+    addText("Of course. This...");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1224,7 +1224,7 @@ function Cr3BoxAScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("Of course. This...")
+    addText("Of course. This...");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1288,7 +1288,7 @@ function Dr3BoxBScene() {
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
     addText("I thought you knew better.");
-    addText("This. Always. Happens.")
+    addText("This. Always. Happens.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function () {
@@ -1447,8 +1447,8 @@ function Ar4WindowScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">It is Tuesday.", {"on click": "Ar4DoorAScene()"});
-    addTextPointerHover(">Is it still Tuesday?", {"on click": "Ar4DoorBScene()"});
+    addTextPointerHover(">It is Tuesday.", {"onclick": "Ar4DoorAScene()"});
+    addTextPointerHover(">Is it still Tuesday?", {"onclick": "Ar4DoorBScene()"});
   });
 }
 
@@ -1472,12 +1472,12 @@ function Ar4DoorAScene() {
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
-    addText("It is Tuesday. And you've always been here.")
+    addText("It is Tuesday. And you've always been here.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Always.", {"on click": "Ar4DoorAAScene()"});
-    addTextPointerHover(">Things change.", {"on click": "Ar4DoorABScene()"});
+    addTextPointerHover(">Always.", {"onclick": "Ar4DoorAAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "Ar4DoorABScene()"});
   });
 }
 
@@ -1500,12 +1500,12 @@ function Ar4DoorBScene() {
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
-    addText("Tuesday. And you've always been here.")
+    addText("Tuesday. And you've always been here.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Always.", {"on click": "Ar4DoorBAScene()"});
-    addTextPointerHover(">Things change.", {"on click": "Ar4DoorBBScene()"});
+    addTextPointerHover(">Always.", {"onclick": "Ar4DoorBAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "Ar4DoorBBScene()"});
   });
 }
 
@@ -1581,8 +1581,8 @@ function Ar4BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Look inside.", {"on click": "Ar4BoxAScene()"});
-    addTextPointerHover(">Leave.", {"on click": "Ar4BoxA2Scene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Ar4BoxAScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Ar4BoxA2Scene()"});
   });
 }
 
@@ -1592,7 +1592,7 @@ function Ar4BoxA2Scene() {
   t.call(function() {
     removeText();
     addText("Don't be shy. It's alright.");
-    addTextPointerHover(">Look inside.", {"on click": "Ar4BoxBScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Ar4BoxBScene()"});
   });
 }
 
@@ -1628,8 +1628,8 @@ function Ar4BoxAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
-    addTextPointerHover(">Leave.", {"on click": "Ar4BoxABScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Ar4BoxABScene()"});
   });
 }
 
@@ -1665,8 +1665,8 @@ function Ar4BoxBScene(){
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
-    addTextPointerHover(">Leave.", {"on click": "Ar4BoxBBScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Ar4BoxBBScene()"});
   });
 }
 
@@ -1696,8 +1696,8 @@ function Ar4BoxABScene() {
   t.call(function() {
     removeText();
     addText("...You always listened. What is happening?");
-    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
-    addTextPointerHover(">Leave.", {"on click": "Cr4FinaleScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Cr4FinaleScene()"});
   });
 }
 
@@ -1706,12 +1706,12 @@ function Ar4BoxBBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("... I'm telling you to take it.")
+    addText("... I'm telling you to take it.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"on click": "Ar4BoxAAScene()"});
-    addTextPointerHover(">Leave.", {"on click": "Cr4FinaleScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Ar4BoxAAScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Cr4FinaleScene()"});
   });
 }
 
@@ -1734,8 +1734,8 @@ function Br4WindowScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Nothing will change.", {"on click": "Br4DoorAScene()"});
-    addTextPointerHover(">How can you know?", {"on click": "Br4DoorBScene()"});
+    addTextPointerHover(">Nothing will change.", {"onclick": "Br4DoorAScene()"});
+    addTextPointerHover(">How can you know?", {"onclick": "Br4DoorBScene()"});
   });
 }
 
@@ -1762,8 +1762,8 @@ function Br4DoorAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Nothing changes.", {"on click": "Br4DoorAAScene()"});
-    addTextPointerHover(">You cannot know for certain.", {"on click": "Br4DoorABScene()"});
+    addTextPointerHover(">Nothing changes.", {"onclick": "Br4DoorAAScene()"});
+    addTextPointerHover(">You cannot know for certain.", {"onclick": "Br4DoorABScene()"});
   });
 }
 
@@ -1799,8 +1799,8 @@ function Br4DoorBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Nothing changes.", {"on click": "Br4DoorBAScene()"});
-    addTextPointerHover(">You cannot know for certain.", {"on click": "Br4DoorBBScene()"});
+    addTextPointerHover(">Nothing changes.", {"onclick": "Br4DoorBAScene()"});
+    addTextPointerHover(">You cannot know for certain.", {"onclick": "Br4DoorBBScene()"});
   });
 }
 
@@ -1887,8 +1887,8 @@ function Br4BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Leave.", {"on click": "Br4BoxAScene()"});
-    addTextPointerHover(">Look inside", {"on click": "Br4BoxBScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Br4BoxAScene()"});
+    addTextPointerHover(">Look inside", {"onclick": "Br4BoxBScene()"});
   });
 }
 
@@ -1915,8 +1915,8 @@ function Br4BoxAScene() {
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Leave.", {"on click": "Br4BoxAAScene()"});
-    addTextPointerHover(">Take key.", {"on click": "Br4BoxABScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Br4BoxAAScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Br4BoxABScene()"});
   });
 }
 
@@ -1944,8 +1944,8 @@ function Br4BoxBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Leave.", {"on click": "Br4BoxBAScene()"});
-    addTextPointerHover(">Take key.", {"on click": "Br4BoxBBScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Br4BoxBAScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Br4BoxBBScene()"});
   });
 }
 
@@ -1964,7 +1964,7 @@ function Br4BoxAAScene() {
   t.call(function() {
     removeText();
     addText("... Was it always like this?");
-    addText("// ...Always?")
+    addText("// ...Always?");
     Cr4FinaleScene();
   });
 }
@@ -2008,8 +2008,8 @@ function Cr4WindowScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">There is nothing to change.", {"on click": "Cr4DoorAScene()"});
-    addTextPointerHover(">Isn't there?", {"on click": "Cr4DoorBScene()"});
+    addTextPointerHover(">There is nothing to change.", {"onclick": "Cr4DoorAScene()"});
+    addTextPointerHover(">Isn't there?", {"onclick": "Cr4DoorBScene()"});
   });
 }
 
@@ -2038,8 +2038,8 @@ function Cr4DoorAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Always.", {"on click": "Cr4DoorAAScene()"});
-    addTextPointerHover(">Things change.", {"on click": "Cr4DoorABScene()"});
+    addTextPointerHover(">Always.", {"onclick": "Cr4DoorAAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "Cr4DoorABScene()"});
   });
 }
 
@@ -2074,8 +2074,8 @@ function Cr4DoorBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Always.", {"on click": "Cr4DoorBAScene()"});
-    addTextPointerHover(">Things change.", {"on click": "Cr4DoorBBScene()"});
+    addTextPointerHover(">Always.", {"onclick": "Cr4DoorBAScene()"});
+    addTextPointerHover(">Things change.", {"onclick": "Cr4DoorBBScene()"});
   });
 }
 
@@ -2155,8 +2155,8 @@ function Cr4BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-  addTextPointerHover(">Look inside.", {"on click": "Cr4BoxBScene()"});
-  addTextPointerHover(">Leave.", {"on click": "Cr4BoxAScene()"});
+  addTextPointerHover(">Look inside.", {"onclick": "Cr4BoxBScene()"});
+  addTextPointerHover(">Leave.", {"onclick": "Cr4BoxAScene()"});
   });
 }
 
@@ -2185,8 +2185,8 @@ function Cr4BoxAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"on click": "Cr4BoxBBScene()"});
-    addTextPointerHover(">Leave.", {"on click": "Cr4BoxAAScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Cr4BoxBBScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Cr4BoxAAScene()"});
   });
 }
 
@@ -2209,8 +2209,8 @@ function Cr4BoxBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"on click": "Cr4BoxBBScene()"});
-    addTextPointerHover(">Leave.", {"on click": "Cr4BoxAAScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Cr4BoxBBScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Cr4BoxAAScene()"});
   });
 }
 
@@ -2225,7 +2225,7 @@ function Cr4BoxAAScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     addText("You've had no problems being contradictory.");
-    addText("// And now... When the choice matters...")
+    addText("// And now... When the choice matters...");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -2313,7 +2313,7 @@ function Dr4WindowScene() {
 
 function Dr4DoorScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0})
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     removeImage();
@@ -2340,8 +2340,8 @@ function Dr4DoorScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Leave.", {"on click": "Dr4BoxScene()"});
-    addTextPointerHover(">Stay.", {"on click": "Dr4DoorBScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Dr4BoxScene()"});
+    addTextPointerHover(">Stay.", {"onclick": "Dr4DoorBScene()"});
   });
 }
 
@@ -2374,8 +2374,8 @@ function Dr4BoxScene() {
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addText(">...", {"on click": "Dr4BoxBAScene()"});
-    addText(">Look inside.", {"on click": "Dr4BoxBScene()"});
+    addText(">...", {"onclick": "Dr4BoxBAScene()"});
+    addText(">Look inside.", {"onclick": "Dr4BoxBScene()"});
   });
 }
 
@@ -2388,8 +2388,8 @@ function Dr4BoxBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">...", {"on click": "Dr4BoxBAScene()"});
-    addTextPointerHover(">Look inside.", {"on click": "Dr4BoxBBScene()"});
+    addTextPointerHover(">...", {"onclick": "Dr4BoxBAScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Dr4BoxBBScene()"});
   });
 }
 
@@ -2409,8 +2409,8 @@ function Dr4BoxBAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">How can we go back?", {"on click": "Dr4BoxBAAScene()"});
-    addTextPointerHover(">Look inside.", {"on click": "Dr4BoxBABScene()"});
+    addTextPointerHover(">How can we go back?", {"onclick": "Dr4BoxBAAScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Dr4BoxBABScene()"});
   });
 }
 
@@ -2441,8 +2441,8 @@ function Dr4BoxBBScene() {
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
     addText("Why do this? // Why force my hand?");
-    addTextPointerHover(">Take key.", {"on click": "Dr4BoxBBBScene()"});
-    addTextPointerHover(">...", {"on click": "Dr4BoxBAAScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Dr4BoxBBBScene()"});
+    addTextPointerHover(">...", {"onclick": "Dr4BoxBAAScene()"});
   });
 }
 
@@ -2461,8 +2461,8 @@ function Dr4BoxBAAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Look inside.", {"on click": "Dr4BoxBABScene()"});
-    addTextPointerHover(">I won't change.", {"on click": "Cr4FinaleScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Dr4BoxBABScene()"});
+    addTextPointerHover(">I won't change.", {"onclick": "Cr4FinaleScene()"});
   });
 }
 
@@ -2489,8 +2489,8 @@ function Dr4BoxBABScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"on click": "Dr4FinaleScene()"});
-    addTextPointerHover(">Stay.", {"on click": "Cr4FinaleScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Dr4FinaleScene()"});
+    addTextPointerHover(">Stay.", {"onclick": "Cr4FinaleScene()"});
   });
 }
 
@@ -2550,7 +2550,7 @@ function Ar4FinaleScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Leave.", {"on click": "Ar4FinaleAScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Ar4FinaleAScene()"});
   });
 }
 
@@ -2606,6 +2606,7 @@ function Br4FinaleScene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
     StatementScene();
   });
 }
@@ -2641,7 +2642,7 @@ function Cr4FinaleScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Leave.", {"on click": "Cr4Finale2Scene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Cr4Finale2Scene()"});
   });
 }
 
@@ -2662,6 +2663,7 @@ function Cr4Finale2Scene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
     StatementScene();
   });
 }
@@ -2724,9 +2726,15 @@ function Dr4FinaleScene() {
 function StatementScene() {
   var t = new TimelineLite();
   t.call(function() {
+    collapseImageSection();
+    addText("<br><br>");
     addText("'Tuesday' is a short video game about choice. For decades, this medium has been exploring every nook and cranny that choice had to offer; either players were thrown into storylines they had no control over, or their choices defined the story itself. Sometimes choice is as simple as deciding the playable character's gender. Other times, the only choice available is to chose whether or not you'll play the game.");
     addText("'Tuesday' presents choice as a binary: 'Look inside' or 'Leave', 'Go through' or 'Move on'. Despite their seemingly restrained nature, the player's decisions add up and begin to define their interactions and eventually, the reactions of the game itself.");
     addText("Special thanks to Jeremy Brown for all his help and for just generally being A Cool Dude.");
+    // Yaw thanks sis this was fun helping you and all!
+    // 2737 lines of code in one file is probably not best practice but it is an accomplishment!
+    // You probably have more javascript experience than me now ;)
+    //    -JB
   });
   t.to("#text-section", 2, {opacity:1});
 }
