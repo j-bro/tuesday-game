@@ -11,11 +11,10 @@ function tuesdayTitleScene() {
   t.call(function() {
     addTitle("What will you choose to do?", 4);
   });
-  t.addDelay(2);
+  t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addTextPointerHover(">START", {"onclick": "r1WindowScene()"});
   });
-  t.to("#text-section", 2, {opacity:1});
 }
 
 //make title sequence more of a title page: give a >START option and info about game
@@ -23,8 +22,8 @@ function tuesdayTitleScene() {
 
 function r1WindowScene() {
   var t = new TimelineLite();
-  t.to("text-secion", 2, {opacity:0});
-  t.to("#title-section", 3, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#title-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     removeTitle();
@@ -178,6 +177,9 @@ function r1BoxAScene() {
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
     removeText();
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("Correct. This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -193,6 +195,9 @@ function r1BoxBScene() {
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
     removeText();
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("This always happens. Did you not remember?");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -348,10 +353,12 @@ function Ar2BoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
     addText("Nothing changes on Tuesdays.");
     addText("// You know what happens next, don't you?");
   });
-  t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addTextPointerHover(">The box will open.", {"onclick": "Ar2BoxAScene()"});
@@ -399,11 +406,11 @@ function Br2BoxAScene() {
 
 function Ar2BoxAScene() {
   var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
   var box = document.getElementById("r1-box");
   box.setAttribute("src", "img/gifs/box_large.gif");
   });
-  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("This always happens.");
@@ -569,7 +576,7 @@ function Ar3DoorAScene() {
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
-    addText("You know what will happen. // Has always happened.");
+    addText("You know what will happen. // What has always happened.");
   });
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
@@ -723,8 +730,18 @@ function Ar3DoorAAScene() {
   t.to("#text-section", 2, {opacity:0,});
   t.call(function() {
     removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("Good. You haven't forgotten.");
     addText("// You haven't changed.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
     Ar3BoxScene();
   });
 }
@@ -734,9 +751,18 @@ function Ar3DoorBAScene() {
   t.to("#text-section", 2, {opacity:0,});
   t.call(function() {
     removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("That's right. Things haven't changed.");
     addText("// You haven't changed.");
     removeImage();
+  });
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
     Br3BoxScene();
   });
 }
@@ -1035,6 +1061,8 @@ function Cr3DoorBBBScene() {
 function Ar3BoxScene() {
   var t = new TimelineLite();
   t.call(function() {
+    removeText();
+    removeImage();
     addImage({"alt": "",
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
@@ -1120,7 +1148,11 @@ function Ar3BoxAScene() {
     addText("// This always happens.")
   });
   t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function () {
+    removeText();
+    removeImage();
     Ar4WindowScene();
   });
 }
@@ -1408,6 +1440,9 @@ function Ar4WindowScene() {
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
     addText("It is Tuesday. It has always been Tuesday.");
   });
   t.to("#text-section", 2, {opacity:1});
