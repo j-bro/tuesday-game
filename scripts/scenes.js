@@ -544,7 +544,7 @@ function Cr3WindowScene() {
   t.call(function() {
     removeText();
     removeImage();
-    addText("It it raining. //Always. // Always.");
+    addText("It it raining. Always. Always.");
     addText("// Always.");
     addImage({"alt": "",
               "src": "img/gifs/window_large.gif",
@@ -883,6 +883,11 @@ function Cr3DoorAAScene() {
   t.to("#text-section", 2, {opacity:0,});
   t.call(function() {
     removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("Good. You haven't forgotten.");
     addText("// You haven't changed.");
     Br3BoxScene();
@@ -894,6 +899,11 @@ function Cr3DoorBAScene() {
   t.to("#text-section", 2, {opacity:0,});
   t.call(function() {
     removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("That's right. Things haven't changed.");
     addText("// You... Haven't changed.");
     Cr3BoxScene();
@@ -924,7 +934,7 @@ function Cr3DoorABScene() {
 
 function Cr3DoorBBScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0}, "+4");
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("... This...");
@@ -935,6 +945,9 @@ function Cr3DoorBBScene() {
     removeText();
     var dor = document.getElementById("r1-door-still");
     dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("As... expected...");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1101,7 +1114,11 @@ function Br3BoxScene() {
 
 function Cr3BoxScene() {
   var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
+    removeImage();
     addImage({"alt": "",
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
@@ -1191,7 +1208,11 @@ function Br3BoxAScene() {
     addText("This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function () {
+    removeText();
+    removeImage();
     Br4WindowScene();
   });
 }
@@ -1233,6 +1254,9 @@ function Cr3BoxAScene() {
     removeText();
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1490,6 +1514,7 @@ function Ar4DoorBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     removeImage();
@@ -1513,6 +1538,8 @@ function Ar4DoorAAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
     removeText();
     addText("Always.");
   });
@@ -1526,9 +1553,17 @@ function Ar4DoorABScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
     addText("Do they need to?");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Or is this just you... And your uncertainty?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     Cr4BoxScene();
   });
@@ -1551,6 +1586,7 @@ function Ar4DoorBBScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
     addText("Do they need to?");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1592,6 +1628,9 @@ function Ar4BoxA2Scene() {
   t.call(function() {
     removeText();
     addText("Don't be shy. It's alright.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
     addTextPointerHover(">Look inside.", {"onclick": "Ar4BoxBScene()"});
   });
 }
@@ -1614,14 +1653,14 @@ function Ar4BoxAScene() {
     addText("I'm giving you a choice. // One final decision.");
   });
   t.to("#text-section", 2, {opacity:1});
-  t.to("#text-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0}, "+=1");
   t.call(function() {
     removeText();
     addText("You've always done the right thing. You've always known...");
-    addText("What's best for us.");
+    addText("// What's best for us.");
   });
   t.to("#text-section", 2, {opacity:1});
-  t.to("#text-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0}, "+=2");
   t.call(function() {
     removeText();
     addText("And now you can choose what's best for you.");
@@ -1685,6 +1724,7 @@ function Ar4BoxAAScene() {
     addText("There. You always listen.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0}, "+2");
   t.call(function() {
     Ar4FinaleScene();
   });
@@ -1715,7 +1755,6 @@ function Ar4BoxBBScene() {
   });
 }
 
-//UNCODED B PATH
 function Br4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
@@ -1726,6 +1765,7 @@ function Br4WindowScene() {
 
     addText("It is Tuesday. Remember.");
   });
+  t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -1745,6 +1785,7 @@ function Br4DoorAScene() {
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
+    removeImage();
     addText("There. I knew you that knew it.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1752,7 +1793,7 @@ function Br4DoorAScene() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
-              "width": "400"});
+              "height": "400"});
   });
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1791,7 +1832,7 @@ function Br4DoorBScene() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
-              "width": "400"});
+              "height": "400"});
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
@@ -1830,10 +1871,16 @@ function Br4DoorABScene() {
     addText("...");
     addText("// What changed you?");
   });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("I thought you knew...");
     addText("You said you knew.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
     Cr4BoxScene();
   });
 }
@@ -1875,7 +1922,7 @@ function Br4BoxScene() {
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
-    addText("What did you think would happen now?");
+    addText("// What did you think would happen now?");
   });
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
@@ -1883,9 +1930,10 @@ function Br4BoxScene() {
   t.call(function() {
     removeText();
     addText("When you're done changing you mind...");
-    addtext("When you're done choosing, what happens?");
+    addText("// When you're done choosing, what happens?");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.addDelay(2);
   t.call(function() {
     addTextPointerHover(">Leave.", {"onclick": "Br4BoxAScene()"});
     addTextPointerHover(">Look inside", {"onclick": "Br4BoxBScene()"});
@@ -1899,6 +1947,7 @@ function Br4BoxAScene() {
     removeText();
     addText("You think it's that easy?");
   });
+  t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
@@ -1907,6 +1956,7 @@ function Br4BoxAScene() {
     addText("There's only one way this ends.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.addDelay(1);
   t.call(function() {
     addImage({"alt": "",
               "src": "img/frames/boxinside with key.png",
@@ -1916,7 +1966,7 @@ function Br4BoxAScene() {
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
     addTextPointerHover(">Leave.", {"onclick": "Br4BoxAAScene()"});
-    addTextPointerHover(">Take key.", {"onclick": "Br4BoxABScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Br4BoxBBScene()"});
   });
 }
 
@@ -1935,7 +1985,7 @@ function Br4BoxBScene() {
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
     addText("One click.");
-    addText("One click and I'm gone.");
+    addText("// One click and I'm gone.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1944,7 +1994,7 @@ function Br4BoxBScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Leave.", {"onclick": "Br4BoxBAScene()"});
+    addTextPointerHover(">Leave.", {"onclick": "Br4BoxAAScene()"});
     addTextPointerHover(">Take key.", {"onclick": "Br4BoxBBScene()"});
   });
 }
@@ -1957,7 +2007,7 @@ function Br4BoxAAScene() {
     removeText();
     removeImage();
     addText("Of course.");
-    addText("You're still so unsure of yourself.");
+    addText("// You're still so unsure of yourself.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -1981,9 +2031,25 @@ function Br4BoxBBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     addText("Remember...");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    removeText();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
     addText("This was your choice.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.addDelay();
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     Br4FinaleScene();
   });
@@ -1998,7 +2064,7 @@ function Cr4WindowScene() {
               "width": "400"});
 
     addText("Tuesday.");
-    addText("It is Tuesday.");
+    addText("// It is Tuesday.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -2029,7 +2095,7 @@ function Cr4DoorAScene() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
-              "width": "400"});
+              "height": "400"});
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
@@ -2065,7 +2131,7 @@ function Cr4DoorBScene() {
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
-              "width": "400"});
+              "height": "400"});
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
@@ -2151,8 +2217,9 @@ function Cr4BoxScene() {
               "id": "r1-box",
               "width": "400"});
     addText("You could never decide.");
-    addText("I see that now.");
+    addText("// I see that now.");
   });
+  t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
   addTextPointerHover(">Look inside.", {"onclick": "Cr4BoxBScene()"});
@@ -2166,8 +2233,9 @@ function Cr4BoxAScene() {
   t.call(function() {
     removeText();
     addText("Don't play dumb.");
-    addText("This is the choice you wanted.");
+    addText("// This is the choice you wanted.");
   });
+  t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
@@ -2224,14 +2292,24 @@ function Cr4BoxAAScene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
     addText("You've had no problems being contradictory.");
     addText("// And now... When the choice matters...");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.addDelay(1);
   t.call(function() {
+    removeText();
+    removeImage();
+  });
+  t.addDelay(2);
+  t.call(function() {
     addText("You make the wrong one.");
+    });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
     Cr4FinaleScene();
   });
 }
@@ -2246,6 +2324,14 @@ function Cr4BoxBBScene() {
   });
   t.addDelay(1);
   t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
   t.call(function() {
     Br4FinaleScene();
   });
@@ -2306,6 +2392,8 @@ function Dr4WindowScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     Dr4DoorScene();
   });
@@ -2313,7 +2401,6 @@ function Dr4WindowScene() {
 
 function Dr4DoorScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     removeImage();
@@ -2330,7 +2417,7 @@ function Dr4DoorScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_chaos.png");
+    dor.setAttribute("src", "img/gifs/door_chaos.gif");
   });
   t.addDelay(1);
   t.to("#text-section", 2, {opacity:0});
@@ -2374,8 +2461,8 @@ function Dr4BoxScene() {
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addText(">...", {"onclick": "Dr4BoxBAScene()"});
-    addText(">Look inside.", {"onclick": "Dr4BoxBScene()"});
+    addTextPointerHover(">...", {"onclick": "Dr4BoxBAScene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Dr4BoxBScene()"});
   });
 }
 
@@ -2383,7 +2470,7 @@ function Dr4BoxBScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
-    removetext();
+    removeText();
     addText("...It's you. // You're the one doing this.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -2399,7 +2486,7 @@ function Dr4BoxBAScene() {
   t.call(function() {
     removeText();
     addText("We can still go back, you know. To the way things were.");
-    addText("This game is...");
+    addText("// This game is...");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -2441,6 +2528,9 @@ function Dr4BoxBBScene() {
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
     addText("Why do this? // Why force my hand?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
     addTextPointerHover(">Take key.", {"onclick": "Dr4BoxBBBScene()"});
     addTextPointerHover(">...", {"onclick": "Dr4BoxBAAScene()"});
   });
@@ -2451,17 +2541,19 @@ function Dr4BoxBAAScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("Time heals all wounds, no matter how deep. Please...");
+    addText("Time heals all wounds, no matter how deep.");
+    addText("// Please...");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
     addText("Don't do this.");
-    addText("Don't change.");
+    addText("// Don't change.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Look inside.", {"onclick": "Dr4BoxBABScene()"});
+    addTextPointerHover(">Take key.", {"onclick": "Dr4BoxBAB2Scene()"});
     addTextPointerHover(">I won't change.", {"onclick": "Cr4FinaleScene()"});
   });
 }
@@ -2485,6 +2577,27 @@ function Dr4BoxBABScene() {
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    addText("Is this really what you want?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Take key.", {"onclick": "Dr4FinaleScene()"});
+    addTextPointerHover(">Stay.", {"onclick": "Cr4FinaleScene()"});
+  });
+}
+
+function Dr4BoxBAB2Scene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("... I see.");
+  });
+  t.addDelay(1);
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
     addText("Is this really what you want?");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -2566,14 +2679,15 @@ function Ar4FinaleAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
+  t.addDelay(1);
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
-    removetext();
+    removeText();
     addText("You made the right choice.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.addDelay(2);
   t.to("#text-section", 2, {opacity:0});
-  t.addDelay(1);
-  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     removeImage();
@@ -2583,8 +2697,6 @@ function Ar4FinaleAScene() {
 
 function Br4FinaleScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0});
-  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("There's no stopping you then.");
@@ -2593,14 +2705,23 @@ function Br4FinaleScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
+    var dor = document.getElementById("r1-door-still");
+    dor.setAttribute("src", "img/gifs/door_once.gif");
+  });
+  t.addDelay(1);
+  t.call(function() {
     addText("All that false indecision, all those wrong turns...");
     addText("// If you wanted to leave this whole time...");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
-  t.addDelay(1);
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
+    removeImage();
     removeText();
+  });
+  t.addDelay(2);
+  t.call(function() {
     addText("You could have chosen it sooner.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -2630,9 +2751,14 @@ function Cr4FinaleScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "height": "400"});
     addText("To change? To behave?");
-    addText("Was it all too much?");
+    addText("// Was it all too much?");
   });
+  t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -2649,7 +2775,9 @@ function Cr4FinaleScene() {
 function Cr4Finale2Scene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
+    removeImage();
     removeText();
     addText("There.");
   });
@@ -2671,8 +2799,10 @@ function Cr4Finale2Scene() {
 function Dr4FinaleScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
+    removeImage();
     addImage({"alt": "",
               "src": "img/gifs/door_still.png",
               "id": "r1-door-still",
@@ -2681,7 +2811,7 @@ function Dr4FinaleScene() {
   t.to("#image-section", 2, {opacity:1});
   t.addDelay(1);
   t.call(function() {
-    addtext("I tried to stop you.");
+    addText("I tried to stop you.");
     addText("// Don't think that I didn't.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -2689,7 +2819,7 @@ function Dr4FinaleScene() {
   t.call(function() {
     removeText();
     addText("You, and your constant disagreeing.");
-    addText("Always choosing the wrong thing.");
+    addText("// Always choosing the wrong thing.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -2705,9 +2835,11 @@ function Dr4FinaleScene() {
   });
   t.addDelay(1);
   t.call(function() {
+    removeText();
     addText("Why did you do it?");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.addDelay(1);
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
@@ -2716,6 +2848,7 @@ function Dr4FinaleScene() {
     addText("What was it all for?");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.addDelay(1);
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -2725,12 +2858,14 @@ function Dr4FinaleScene() {
 
 function StatementScene() {
   var t = new TimelineLite();
+  t.addDelay(3);
   t.call(function() {
     collapseImageSection();
     addText("<br><br>");
     addText("'Tuesday' is a short video game about choice. For decades, this medium has been exploring every nook and cranny that choice had to offer; either players were thrown into storylines they had no control over, or their choices defined the story itself. Sometimes choice is as simple as deciding the playable character's gender. Other times, the only choice available is to chose whether or not you'll play the game.");
     addText("'Tuesday' presents choice as a binary: 'Look inside' or 'Leave', 'Go through' or 'Move on'. Despite their seemingly restrained nature, the player's decisions add up and begin to define their interactions and eventually, the reactions of the game itself.");
     addText("Special thanks to Jeremy Brown for all his help and for just generally being A Cool Dude.");
+    addText("Thank you for playing!");
     // Yaw thanks sis this was fun helping you and all!
     // 2737 lines of code in one file is probably not best practice but it is an accomplishment!
     // You probably have more javascript experience than me now ;)
