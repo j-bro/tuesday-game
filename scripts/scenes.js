@@ -1954,6 +1954,156 @@ function Br4BoxBBScene() {
   });
 }
 
+function Cr4WindowScene() {
+  var t = new TimelineLite();
+  t.call(function() {
+    addImage({"alt": "",
+              "src": "img/gifs/window_large.gif",
+              "id": "r1-window-image",
+              "width": "400"});
+
+    addText("Tuesday.");
+    addText("It is Tuesday.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("There is nothing to change.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">There is nothing to change.", {"on click": "Cr4DoorAScene()"});
+    addTextPointerHover(">Isn't there?", {"on click": "Cr4DoorBScene()"});
+  });
+}
+
+function Cr4DoorAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("Nothing at all.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("Nothing needs to change.");
+    addText("// It can always be Tuesday.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Always.", {"on click": "Cr4DoorAAScene()"});
+    addTextPointerHover(">Things change.", {"on click": "Cr4DoorABScene()"});
+  });
+}
+
+function Cr4DoorBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("No... There isn't.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("There isn't... Anything to change.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
+    addImage({"alt": "",
+              "src": "img/gifs/door_still.png",
+              "id": "r1-door-still",
+              "width": "400"});
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("Nothing needs to change.");
+    addText("// It can always be Tuesday.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    addTextPointerHover(">Always.", {"on click": "Cr4DoorBAScene()"});
+    addTextPointerHover(">Things change.", {"on click": "Cr4DoorBBScene()"});
+  });
+}
+
+function Cr4DoorAAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...");
+    addText("... Always. Yes, that's right.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Br4BoxScene();
+  });
+}
+
+function Cr4DoorABScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...");
+    addText("// What made you change so quickly?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Cr4BoxScene();
+  });
+}
+
+function Cr4DoorBAScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...");
+    addText("// What made you change so quickly?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Cr4BoxScene();
+  });
+}
+
+function Cr4DoorBBScene() {
+  var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    addText("...");
+    addText("// Is that really what you think?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
+    Cr4BoxScene();
+  });
+}
+
 function Cr4BoxScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
