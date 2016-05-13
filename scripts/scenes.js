@@ -345,6 +345,7 @@ function r2DoorBPostScene() {
 
 function Ar2BoxScene() {
   var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeText();
@@ -1103,6 +1104,7 @@ function Br3BoxScene() {
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
+    removeText();
     addText("We know what always happens. // Don't we?");
   });
   t.to("#text-section", 2, {opacity:1});
