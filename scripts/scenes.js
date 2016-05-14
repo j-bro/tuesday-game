@@ -1143,8 +1143,8 @@ function Dr3BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Do we?", {"onclick": "Dr3Box2Scene()"});
-    addTextPointerHover(">Do you?", {"onclick": "Dr3Box2Scene()"});
+    addTextPointerHover(">Do we?", {"onclick": "Dr3BoxBScene()"});
+    addTextPointerHover(">Do you?", {"onclick": "Dr3BoxBScene()"});
   });
 }
 
