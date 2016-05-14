@@ -1262,7 +1262,11 @@ function Cr3BoxAScene() {
     addText("This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function () {
+    removeText();
+    removeImage();
     Cr4WindowScene();
   });
 }
@@ -1301,7 +1305,11 @@ function Dr3BoxAScene() {
     addText("But you continue to doubt.");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.to("#image-section", 2, {opacity:0});
   t.call(function () {
+    removeText();
+    removeImage();
     Dr4WindowScene();
   });
 }
@@ -1764,10 +1772,11 @@ function Br4WindowScene() {
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
-
-    addText("It is Tuesday. Remember.");
   });
   t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("It is Tuesday. Remember.");
+  });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -1894,6 +1903,12 @@ function Br4DoorBAScene() {
     removeText();
     addText("... Good.");
     addText("// Nothing... ever changes.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    removeImage();
     Br4BoxScene();
   });
 }
@@ -2064,7 +2079,9 @@ function Cr4WindowScene() {
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
-
+  });
+  t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
     addText("Tuesday.");
     addText("// It is Tuesday.");
   });
@@ -2346,9 +2363,11 @@ function Dr4WindowScene() {
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
-    addText("...It is Tuesday. // Isn't it?");
   });
   t.to("#image-section", 2, {opacity:1});
+  t.call(function() {
+    addText("...It is Tuesday. // Isn't it?");
+  });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     var win = document.getElementById("r1-window-image");
