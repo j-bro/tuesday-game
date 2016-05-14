@@ -2368,7 +2368,6 @@ function Dr4WindowScene() {
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
-  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     Dr4DoorScene();
   });
