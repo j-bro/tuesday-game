@@ -453,10 +453,6 @@ function Br2BoxBScene() {
   });
   t.to("#text-section", 1, {opacity:1});
   t.call(function() {
-    Ar2BoxBPostScene();
-  });
-  t.to("#text-section", 2, {opacity:0});
-  t.call(function() {
     removeText();
     addTextPointerHover(">Look inside.", {"onclick": "Br2BoxBPostScene()"});
     addTextPointerHover(">Leave.", {"onclick": "Br3WindowScene()"});
