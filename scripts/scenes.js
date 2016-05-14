@@ -435,15 +435,9 @@ function Ar2BoxBScene() {
   });
   t.to("#text-section", 1, {opacity:1});
   t.call(function() {
-    Ar2BoxBPostScene();
-  });
-  t.to("#text-section", 2, {opacity:0});
-  t.call(function() {
-    removeText();
     addTextPointerHover(">Look inside.", {"onclick": "Ar2BoxBPostScene()"});
     addTextPointerHover(">Leave.", {"onclick": "Ar3WindowScene()"});
   });
-  t.to("#text-section", 2, {opacity:1});
 }
 
 function Br2BoxBScene() {
@@ -503,7 +497,7 @@ function Ar3WindowScene() {
   t.call(function() {
     removeText();
     removeImage();
-    addText("It it always raining. // Always.");
+    addText("It is always raining. // Always.");
     addImage({"alt": "",
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
@@ -524,7 +518,7 @@ function Br3WindowScene() {
   t.call(function() {
     removeText();
     removeImage();
-    addText("It it raining. //Always. // Always.");
+    addText("It is raining. //Always. // Always.");
     addImage({"alt": "",
               "src": "img/gifs/window_large.gif",
               "id": "r1-window-image",
@@ -595,7 +589,7 @@ function Ar3DoorBScene() {
     addText("It is Tuesday. Things never change.");
     addText("// Not ever.");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
@@ -770,13 +764,13 @@ function Ar3DoorBAScene() {
 
 function Ar3DoorABScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0}, "+4");
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("... This...");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -792,13 +786,13 @@ function Ar3DoorABScene() {
 
 function Ar3DoorBBScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0}, "+4");
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("... This...");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -811,7 +805,6 @@ function Ar3DoorBBScene() {
     addTextPointerHover(">Go through door.", {"onclick": "Ar3DoorBBBScene()"});
   });
 }
-
 
 function Br3DoorAAScene() {
   var t = new TimelineLite();
@@ -837,13 +830,13 @@ function Br3DoorBAScene() {
 
 function Br3DoorABScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0}, "+4");
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("... This...");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -859,13 +852,13 @@ function Br3DoorABScene() {
 
 function Br3DoorBBScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0}, "+4");
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("... This...");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -913,13 +906,13 @@ function Cr3DoorBAScene() {
 
 function Cr3DoorABScene() {
   var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0}, "+4");
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     addText("... This...");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -940,8 +933,8 @@ function Cr3DoorBBScene() {
     removeText();
     addText("... This...");
   });
-  t.to("#text-section", 2, {opacity:1}, "+=1");
-  t.to("#text-section", 2, {opacity:0}, "+=1");
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
@@ -1074,6 +1067,7 @@ function Cr3DoorBBBScene() {
 
 function Ar3BoxScene() {
   var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
     removeImage();
@@ -1096,7 +1090,10 @@ function Ar3BoxScene() {
 
 function Br3BoxScene() {
   var t = new TimelineLite();
+  t.to("#text-section", 2, {opacity:0});
   t.call(function() {
+    removeText();
+    removeImage();
     addImage({"alt": "",
               "src": "img/frames/box_large1.png",
               "id": "r1-box",
@@ -1104,7 +1101,6 @@ function Br3BoxScene() {
   });
   t.to("#image-section", 2, {opacity:1});
   t.call(function() {
-    removeText();
     addText("We know what always happens. // Don't we?");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1746,6 +1742,9 @@ function Ar4BoxABScene() {
   t.call(function() {
     removeText();
     addText("...You always listened. What is happening?");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
     addTextPointerHover(">Take key.", {"onclick": "Ar4BoxAAScene()"});
     addTextPointerHover(">Leave.", {"onclick": "Cr4FinaleScene()"});
   });
@@ -2032,6 +2031,8 @@ function Br4BoxAAScene() {
     removeText();
     addText("... Was it always like this?");
     addText("// ...Always?");
+  });
+  t.to("#text-section", 2, {opacity:1});
     Cr4FinaleScene();
   });
 }
