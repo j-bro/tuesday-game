@@ -2638,7 +2638,7 @@ function Dr4BoxBBBScene() {
     removeImage();
     var key = document.getElementById("r4-key");
     key.setAttribute("src", "img/frames/boxinside no key.png");
-    addText("Why ruin everything? Why leave when this... //");
+    addText("Why ruin everything? Why leave when this...");
   });
   t.to("#image-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:1});
