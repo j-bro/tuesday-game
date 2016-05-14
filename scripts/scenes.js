@@ -1143,8 +1143,8 @@ function Dr3BoxScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Do we?", {"onclick": "Dr3BoxBScene()"});
-    addTextPointerHover(">Do you?", {"onclick": "Dr3BoxBScene()"});
+    addTextPointerHover(">Do we?", {"onclick": "Dr3BoxAScene()"});
+    addTextPointerHover(">Do you?", {"onclick": "Dr3BoxAScene()"});
   });
 }
 
@@ -1294,6 +1294,13 @@ function Dr3BoxAScene() {
     var box = document.getElementById("r1-box");
     box.setAttribute("src", "img/gifs/box_large.gif");
     addText("This. Always. Happens.");
+  });
+  t.to("#text-section", 2, {opacity:1});
+  t.to("#text-section", 2, {opacity:0});
+  t.call(function() {
+    removeText();
+    var box = document.getElementById("r1-box");
+    box.setAttribute("src", "img/gifs/box_shutfast.gif");
     addText("But you continue to doubt.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1303,23 +1310,6 @@ function Dr3BoxAScene() {
     removeText();
     removeImage();
     Dr4WindowScene();
-  });
-}
-
-function Dr3BoxBScene() {
-  var t = new TimelineLite();
-  t.to("#text-section", 2, {opacity:0});
-  t.call(function() {
-    removeText();
-    var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
-    addText("I thought you knew better.");
-    addText("This. Always. Happens.");
-  });
-  t.to("#text-section", 2, {opacity:1});
-  t.call(function () {
-    addTextPointerHover(">Leave.", {"onclick": "Dr3BoxBAScene()"});
-    addTextPointerHover(">Look inside.", {"onclick": "Dr3BoxBBScene()"});
   });
 }
 
@@ -1422,40 +1412,6 @@ function Cr3BoxBBScene() {
     removeText();
     removeImage();
     Cr4WindowScene();
-  });
-}
-
-function Dr3BoxBAScene() {
-  var t = new TimelineLite();
-  t.call(function() {
-    removeText();
-    var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
-    addText("No!");
-  });
-  t.to("#text-section", 2, {opacity:0});
-  t.to("#image-section", 2, {opacity:0});
-  t.call(function() {
-    removeText();
-    removeImage();
-    Cr4WindowScene();
-  });
-}
-
-function Dr3BoxBBScene() {
-  var t = new TimelineLite();
-  t.call(function() {
-    removeText();
-    var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
-    addText("No!");
-  });
-  t.to("#text-section", 2, {opacity:0});
-  t.to("#image-section", 2, {opacity:0});
-  t.call(function() {
-    removeText();
-    removeImage();
-    Dr4WindowScene();
   });
 }
 
