@@ -2033,6 +2033,7 @@ function Br4BoxAAScene() {
     addText("// ...Always?");
   });
   t.to("#text-section", 2, {opacity:1});
+  t.call(function() {
     Cr4FinaleScene();
   });
 }
