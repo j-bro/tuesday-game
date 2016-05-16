@@ -3,32 +3,31 @@
       <!--CDN link for  TweenMax-->
       <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
       <link rel="stylesheet" type="text/css" href="css/style.css">
+      <style>
+        /* Override some default game page styles */
+        #title-section {
+            opacity: 1;
+            height: 200px;
+            width: 100%
+        }
+        #text-section {
+            opacity: 1;
+        }
+      </style>
 
-      <title>TUESDAY</title>
+      <title>GAME SELECTION</title>
     </head>
 
     <body>
       <content>
         <section id="title-section">
-
+            <h1>GAME SELECTION</h1>
         </section>
-
-        <section id="image-section">
-
-        </section>
-
         <section id="text-section">
-
+            <h3><a href="tuesday.html">TUESDAY</a></h3>
+            <h3><a href="wednesday.html">WEDNESDAY</a></h3>
+            <h3><a href="thursday.html">THURSDAY</a></h3>
         </section>
       </content>
-
-      <script src="scripts/scenes.js"></script>
-      <script src="scripts/tuesday-game.js"></script>
-      <script>
-        setHeights();
-        r2DoorScene();
-        // StatementScene();
-        // tuesdayTitleScene();
-      </script>
     </body>
 </html>
