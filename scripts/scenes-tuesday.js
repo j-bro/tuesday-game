@@ -29,7 +29,7 @@ function r1WindowScene() {
     removeTitle();
     collapseTitleSection();
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -86,7 +86,7 @@ function r1DoorScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -134,7 +134,7 @@ function r1DoorOpenScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function(){
@@ -154,7 +154,7 @@ function r1BoxScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
   });
@@ -175,7 +175,7 @@ function r1BoxAScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     removeText();
   });
   t.addDelay(1);
@@ -193,7 +193,7 @@ function r1BoxBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     removeText();
   });
   t.addDelay(1);
@@ -235,7 +235,7 @@ function r2WindowScene() {
     addText("It is Tuesday. It is raining.");
     addText("// There is nothing new under the sun.");
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -274,7 +274,7 @@ function r2DoorScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("It is Tuesday. // What will happen?");
@@ -293,7 +293,7 @@ function r2DoorAScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -315,7 +315,7 @@ function r2DoorBScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -351,7 +351,7 @@ function Ar2BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
   });
@@ -374,7 +374,7 @@ function Br2BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
     addText("See? Nothing changes on Tuesdays.");
@@ -392,7 +392,7 @@ function Br2BoxAScene() {
   var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
-  box.setAttribute("src", "img/gifs/box_large.gif");
+  box.setAttribute("src", "img/tues/gifs/box_large.gif");
   });
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -410,7 +410,7 @@ function Ar2BoxAScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
   var box = document.getElementById("r1-box");
-  box.setAttribute("src", "img/gifs/box_large.gif");
+  box.setAttribute("src", "img/tues/gifs/box_large.gif");
   });
   t.call(function() {
     removeText();
@@ -426,7 +426,7 @@ function Ar2BoxBScene() {
   var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
-  box.setAttribute("src", "img/gifs/box_large.gif");
+  box.setAttribute("src", "img/tues/gifs/box_large.gif");
   });
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -444,7 +444,7 @@ function Br2BoxBScene() {
   var t = new TimelineLite();
   t.call(function() {
   var box = document.getElementById("r1-box");
-  box.setAttribute("src", "img/gifs/box_large.gif");
+  box.setAttribute("src", "img/tues/gifs/box_large.gif");
   });
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
@@ -495,7 +495,7 @@ function Ar3WindowScene() {
     removeImage();
     addText("It is always raining. // Always.");
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -516,7 +516,7 @@ function Br3WindowScene() {
     removeImage();
     addText("It is raining. //Always. // Always.");
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -538,7 +538,7 @@ function Cr3WindowScene() {
     addText("It it raining. Always. Always.");
     addText("// Always.");
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -564,7 +564,7 @@ function Ar3DoorAScene() {
     removeImage();
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("You know what will happen. // What has always happened.");
@@ -592,7 +592,7 @@ function Ar3DoorBScene() {
     removeImage();
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("You know what will happen. // What always happens.");
@@ -620,7 +620,7 @@ function Br3DoorAScene() {
     removeImage();
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("You know what will happen. // What has always happened.");
@@ -648,7 +648,7 @@ function Br3DoorBScene() {
     removeImage();
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("You know what will happen. // What always happens.");
@@ -675,7 +675,7 @@ function Cr3DoorAScene() {
     removeImage();
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("You know what will happen. // Has always happened.");
@@ -703,7 +703,7 @@ function Cr3DoorBScene() {
     removeImage();
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("You know what will happen. // What always happens.");
@@ -722,7 +722,7 @@ function Ar3DoorAAScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -743,7 +743,7 @@ function Ar3DoorBAScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -770,7 +770,7 @@ function Ar3DoorABScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
     addText("As... expected...");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -792,7 +792,7 @@ function Ar3DoorBBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
     addText("As... expected...");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -836,7 +836,7 @@ function Br3DoorABScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
     addText("As... expected...");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -858,7 +858,7 @@ function Br3DoorBBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
     addText("As... expected...");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -874,7 +874,7 @@ function Cr3DoorAAScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -890,7 +890,7 @@ function Cr3DoorBAScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -912,7 +912,7 @@ function Cr3DoorABScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
     addText("As... expected...");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -934,7 +934,7 @@ function Cr3DoorBBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -953,7 +953,7 @@ function Ar3DoorABBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_shut.gif");
     addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
@@ -972,7 +972,7 @@ function Ar3DoorBBBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_shut.gif");
     addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
@@ -991,7 +991,7 @@ function Br3DoorABBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_shut.gif");
     addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
@@ -1010,7 +1010,7 @@ function Br3DoorBBBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_shut.gif");
     addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
@@ -1029,7 +1029,7 @@ function Cr3DoorABBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_shut.gif");
     addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
@@ -1048,7 +1048,7 @@ function Cr3DoorBBBScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_shut.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_shut.gif");
     addText("No. That's not... That's not how it goes.");
 });
   t.to("#text-section", 2, {opacity:1});
@@ -1068,7 +1068,7 @@ function Ar3BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
   });
@@ -1091,7 +1091,7 @@ function Br3BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
   });
@@ -1114,7 +1114,7 @@ function Cr3BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
   });
@@ -1133,7 +1133,7 @@ function Dr3BoxScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
   });
@@ -1154,7 +1154,7 @@ function Ar3BoxAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     addText("We're never wrong.");
     addText("// This always happens.");
   });
@@ -1175,7 +1175,7 @@ function Ar3BoxBScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     addText("Thank goodnes.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1198,7 +1198,7 @@ function Br3BoxAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     addText("This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1224,7 +1224,7 @@ function Br3BoxBScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     addText("This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1247,7 +1247,7 @@ function Cr3BoxAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -1276,7 +1276,7 @@ function Cr3BoxBScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     addText("This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1292,7 +1292,7 @@ function Dr3BoxAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_large.gif");
+    box.setAttribute("src", "img/tues/gifs/box_large.gif");
     addText("This. Always. Happens.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1300,7 +1300,7 @@ function Dr3BoxAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    box.setAttribute("src", "img/tues/gifs/box_shutfast.gif");
     addText("But you continue to doubt.");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -1318,7 +1318,7 @@ function Ar3BoxBAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    box.setAttribute("src", "img/tues/gifs/box_shutfast.gif");
     addText("No!");
   });
   t.to("#text-section", 2, {opacity:0});
@@ -1335,7 +1335,7 @@ function Ar3BoxBBScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    box.setAttribute("src", "img/tues/gifs/box_shutfast.gif");
     addText("No!");
   });
   t.to("#text-section", 2, {opacity:0});
@@ -1352,7 +1352,7 @@ function Br3BoxBAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    box.setAttribute("src", "img/tues/gifs/box_shutfast.gif");
     addText("No!");
   });
   t.to("#text-section", 2, {opacity:0});
@@ -1369,7 +1369,7 @@ function Br3BoxBBScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    box.setAttribute("src", "img/tues/gifs/box_shutfast.gif");
     addText("No!");
   });
   t.to("#text-section", 2, {opacity:0});
@@ -1386,7 +1386,7 @@ function Cr3BoxBAScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    box.setAttribute("src", "img/tues/gifs/box_shutfast.gif");
     addText("No!");
   });
   t.to("#text-section", 2, {opacity:0});
@@ -1403,7 +1403,7 @@ function Cr3BoxBBScene() {
   t.call(function() {
     removeText();
     var box = document.getElementById("r1-box");
-    box.setAttribute("src", "img/gifs/box_shutfast.gif");
+    box.setAttribute("src", "img/tues/gifs/box_shutfast.gif");
     addText("No!");
   });
   t.to("#text-section", 2, {opacity:0});
@@ -1419,7 +1419,7 @@ function Ar4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -1448,7 +1448,7 @@ function Ar4DoorAScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -1477,7 +1477,7 @@ function Ar4DoorBScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -1497,7 +1497,7 @@ function Ar4DoorAAScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
     removeText();
     addText("Always.");
   });
@@ -1561,7 +1561,7 @@ function Ar4BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
     addText("I'm going to show you something.");
@@ -1601,7 +1601,7 @@ function Ar4BoxAScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "width": "400"});
   });
@@ -1638,7 +1638,7 @@ function Ar4BoxBScene(){
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "width": "400"});
   });
@@ -1673,7 +1673,7 @@ function Ar4BoxAAScene() {
   t.call(function() {
     removeText();
     var key = document.getElementById("r4-key");
-    key.setAttribute("src", "img/frames/boxinside no key.png");
+    key.setAttribute("src", "img/tues/frames/boxinside no key.png");
   });
   t.addDelay(1);
   t.to("#image-section", 2, {opacity:0});
@@ -1720,7 +1720,7 @@ function Br4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -1753,7 +1753,7 @@ function Br4DoorAScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -1792,7 +1792,7 @@ function Br4DoorBScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -1887,7 +1887,7 @@ function Br4BoxScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
     addText("// What did you think would happen now?");
@@ -1927,7 +1927,7 @@ function Br4BoxAScene() {
   t.addDelay(1);
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -1946,7 +1946,7 @@ function Br4BoxBScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -1995,7 +1995,7 @@ function Br4BoxBBScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     var key = document.getElementById("r4-key");
-    key.setAttribute("src", "img/frames/boxinside no key.png");
+    key.setAttribute("src", "img/tues/frames/boxinside no key.png");
     addText("When this is all over...");
   });
   t.to("#text-section", 2, {opacity:1});
@@ -2010,7 +2010,7 @@ function Br4BoxBBScene() {
     removeImage();
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -2030,7 +2030,7 @@ function Cr4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -2066,7 +2066,7 @@ function Cr4DoorAScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -2102,7 +2102,7 @@ function Cr4DoorBScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -2186,7 +2186,7 @@ function Cr4BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
     addText("You could never decide.");
@@ -2215,7 +2215,7 @@ function Cr4BoxAScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -2239,7 +2239,7 @@ function Cr4BoxBScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -2293,14 +2293,14 @@ function Cr4BoxBBScene() {
   t.call(function() {
     removeText();
     var key = document.getElementById("r4-key");
-    key.setAttribute("src", "img/frames/boxinside no key.png");
+    key.setAttribute("src", "img/tues/frames/boxinside no key.png");
   });
   t.addDelay(1);
   t.to("#image-section", 2, {opacity:0});
   t.call(function() {
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -2314,7 +2314,7 @@ function Dr4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/gifs/window_large.gif",
+              "src": "img/tues/gifs/window_large.gif",
               "id": "r1-window-image",
               "width": "400"});
   });
@@ -2325,33 +2325,33 @@ function Dr4WindowScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/gifs/window_largeslow.gif");
+    win.setAttribute("src", "img/tues/gifs/window_largeslow.gif");
   });
   t.addDelay(1);
   t.call(function() {
     console.log("after 5");
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/gifs/window_largeslow2.gif");
+    win.setAttribute("src", "img/tues/gifs/window_largeslow2.gif");
   });
   t.addDelay(1);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/gifs/window_largeslow3.gif");
+    win.setAttribute("src", "img/tues/gifs/window_largeslow3.gif");
   });
   t.addDelay(1);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/gifs/window_largeslow4.gif");
+    win.setAttribute("src", "img/tues/gifs/window_largeslow4.gif");
   });
   t.addDelay(1);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/gifs/window_largeslow5.gif");
+    win.setAttribute("src", "img/tues/gifs/window_largeslow5.gif");
   });
   t.addDelay(1);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/frames/window_empty.png");
+    win.setAttribute("src", "img/tues/frames/window_empty.png");
   });
   t.addDelay(2);
   t.to("#text-section", 2, {opacity:0});
@@ -2379,7 +2379,7 @@ function Dr4DoorScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -2391,7 +2391,7 @@ function Dr4DoorScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_chaos.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_chaos.gif");
   });
   t.addDelay(1);
   t.to("#text-section", 2, {opacity:0});
@@ -2427,7 +2427,7 @@ function Dr4BoxScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/frames/box_large1.png",
+              "src": "img/tues/frames/box_large1.png",
               "id": "r1-box",
               "width": "400"});
     addText("We should be safe here.");
@@ -2495,7 +2495,7 @@ function Dr4BoxBBScene() {
   t.call(function() {
     removeText();
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -2544,7 +2544,7 @@ function Dr4BoxBABScene() {
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     addImage({"alt": "",
-              "src": "img/frames/boxinside with key.png",
+              "src": "img/tues/frames/boxinside with key.png",
               "id": "r4-key",
               "height": "400"});
   });
@@ -2589,7 +2589,7 @@ function Dr4BoxBBBScene() {
     removeText();
     removeImage();
     var key = document.getElementById("r4-key");
-    key.setAttribute("src", "img/frames/boxinside no key.png");
+    key.setAttribute("src", "img/tues/frames/boxinside no key.png");
     addText("Why ruin everything? Why leave when this...");
   });
   t.to("#image-section", 2, {opacity:1});
@@ -2613,7 +2613,7 @@ function Ar4FinaleScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -2645,7 +2645,7 @@ function Ar4FinaleAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   var dor = document.getElementById("r1-door-still");
-  dor.setAttribute("src", "img/gifs/door_once.gif");
+  dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   t.addDelay(1);
   t.call(function() {
     removeText();
@@ -2680,7 +2680,7 @@ function Br4FinaleScene() {
   t.call(function() {
     removeText();
     var dor = document.getElementById("r1-door-still");
-    dor.setAttribute("src", "img/gifs/door_once.gif");
+    dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
@@ -2726,7 +2726,7 @@ function Cr4FinaleScene() {
   t.call(function() {
     removeText();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
     addText("To change? To behave?");
@@ -2778,7 +2778,7 @@ function Dr4FinaleScene() {
     removeText();
     removeImage();
     addImage({"alt": "",
-              "src": "img/gifs/door_still.png",
+              "src": "img/tues/gifs/door_still.png",
               "id": "r1-door-still",
               "height": "400"});
   });
@@ -2805,7 +2805,7 @@ function Dr4FinaleScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
   var dor = document.getElementById("r1-door-still");
-  dor.setAttribute("src", "img/gifs/door_once.gif");
+  dor.setAttribute("src", "img/tues/gifs/door_once.gif");
   });
   t.addDelay(1);
   t.call(function() {
