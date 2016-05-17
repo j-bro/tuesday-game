@@ -31,12 +31,11 @@ function r1WindowScene() {
     addImage({"alt": "",
               "src": "img/wed/gifs/window_large.gif",
               "id": "r1-window-image",
-              "width": "600"});
+              "width": "580"});
   });
   t.to("#image-section", 3, {opacity:1});
   t.call(function() {
     addText("It is Wednesday. What a beautiful day.");
-    addText("// This always happens.");
   });
   t.to("#text-section", 2, {opacity:1});
   t.to("#text-section", 2, {opacity:0});
@@ -220,9 +219,14 @@ function r2WindowScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/wed/trans/box-window.gif");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
   });
   t.addDelay(3);
+  t.call(function() {
+    var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/trans/box-window.gif");
+  });
+  t.addDelay(4);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/gifs/window_large.gif");
@@ -473,11 +477,16 @@ function Ar3WindowScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
+  });
+  t.addDelay(3);
+  t.call(function() {
+    var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/trans/box-window.gif");
     removeText();
     addText("It is always a beautiful day. // Always.");
   });
-  t.addDelay(2);
+  t.addDelay(4);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/gifs/window_large.gif");
@@ -494,11 +503,16 @@ function Br3WindowScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
+  });
+  t.addDelay(3);
+  t.call(function() {
+    var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/trans/box-window.gif");
     removeText();
-    addText("It is a beautiful day. // Always. // Always.");
+    addText("It is always a beautiful day. // Always. // Always.");
   });
-  t.addDelay(2);
+  t.addDelay(4);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/wifs/window_large.gif");
@@ -515,12 +529,17 @@ function Cr3WindowScene() {
   t.to("#text-section", 2, {opacity:0});
   t.call(function() {
     removeText();
-    addText("It it a beautiful day. Always. Always.");
+    var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
+  });
+  t.addDelay(3);
+  t.call(function() {
+    addText("It is always a beautiful day. Always. Always.");
     addText("// Always.");
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/trans/box-window.gif");
   });
-  t.addDelay(2);
+  t.addDelay(4);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/gifs/window_large.gif");
@@ -1343,9 +1362,14 @@ function Ar4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/wed/trans/box-window.gif");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
   });
   t.addDelay(3);
+  t.call(function() {
+    var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/trans/box-window.gif");
+  });
+  t.addDelay(4);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/gifs/window_large.gif");
@@ -1636,9 +1660,14 @@ function Br4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/wed/trans/box-window.gif");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
   });
   t.addDelay(3);
+  t.call(function() {
+    var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/trans/box-window.gif");
+  });
+  t.addDelay(4);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/gifs/window_large.gif");
@@ -1919,9 +1948,14 @@ function Cr4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/wed/trans/box-window.gif");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
   });
   t.addDelay(3);
+  t.call(function() {
+    var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/trans/box-window.gif");
+  });
+  t.addDelay(4);
   t.call(function() {
     var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/gifs/window_large.gif");
@@ -2181,10 +2215,15 @@ function Dr4WindowScene() {
   var t = new TimelineLite();
   t.call(function() {
     var win = document.getElementById("r1-window-image");
+    win.setAttribute("src", "img/wed/gifs/box_shutfast.gif");
+  });
+  t.addDelay(3);
+  t.call(function() {
+    var win = document.getElementById("r1-window-image");
     win.setAttribute("src", "img/wed/trans/box-window.gif");
     addText("...It is Wednesday. // Isn't it?");
   });
-  t.addDelay(3);
+  t.addDelay(4);
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
     var win = document.getElementById("r1-window-image");
