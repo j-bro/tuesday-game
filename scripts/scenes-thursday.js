@@ -2517,7 +2517,7 @@ function Dr4BoxBAAScene() {
   });
   t.to("#text-section", 2, {opacity:1});
   t.call(function() {
-    addTextPointerHover(">Take key.", {"onclick": "Dr4BoxBAB2Scene()"});
+    addTextPointerHover(">Look inside.", {"onclick": "Dr4BoxBAB2Scene()"});
     addTextPointerHover(">I won't change.", {"onclick": "Cr4FinaleScene()"});
   });
 }
