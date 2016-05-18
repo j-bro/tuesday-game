@@ -2505,7 +2505,7 @@ function Ar4FinaleAScene() {
   var t = new TimelineLite();
   t.to("#text-section", 2, {opacity:0});
   var dor = document.getElementById("r1-door-still");
-  dor.setAttribute("src", "img/wed/gifs/door_once.gif");
+  dor.setAttribute("src", "img/wed/gifs/door_open.gif");
   t.addDelay(1);
   t.call(function() {
     removeText();
@@ -2542,7 +2542,7 @@ function Br4FinaleScene() {
   t.call(function() {
     removeText();
     var win = document.getElementById("r1-window-image");
-    win.setAttribute("src", "img/wed/gifs/goor_open.gif");
+    win.setAttribute("src", "img/wed/gifs/door_open.gif");
   });
   t.addDelay(1);
   t.call(function() {
